@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Druk-Wide-Medium';
+  src: url('../fonts/druk-wide/Druk-Wide-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Druk-Wide-Regular';
+  src: url('../fonts/druk-wide/Druk-Wide-Bold-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Yorkten-Slab-Regular';
+  src: url('../fonts/yorkten-slab/Yorkten-Slab-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyr-Medium';
+  src: url('../fonts/helvetica/helveticaneuecyr-medium.eot');
+  /* IE 9 Compatibility Mode */
+  src: url('../fonts/helvetica/helveticaneuecyr-medium.eot?#iefix') format('embedded-opentype'),
+    /* IE < 9 */
+    url('../fonts/helvetica/helveticaneuecyr-medium.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/helvetica/helveticaneuecyr-medium.woff') format('woff'),
+    /* Firefox >= 3.6, any other modern browser */
+    url('../fonts/helvetica/helveticaneuecyr-medium.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../fonts/helvetica/helveticaneuecyr-medium.svg#helveticaneuecyr-medium') format('svg');
+  /* Chrome < 4, Legacy iOS */
+}

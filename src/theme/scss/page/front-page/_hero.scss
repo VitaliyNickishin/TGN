@@ -1,0 +1,56 @@
+.hero {
+  padding-top: 165px;
+  padding-bottom: 75px;
+  position: relative;
+  @include mq (tablet, max) {
+    padding-bottom: 35px;
+  }
+
+  h1 {
+    font-family: $medium_font;
+    font-size: 38px;
+    line-height: 50px;
+    @include mq (desktop-wide, max) {
+      margin: 0 auto 30px;
+      max-width: 600px;
+      font-size: 2rem;
+      line-height: 2.2rem;
+    }
+    @include mq (tablet, max) {
+      margin-bottom: 50px;
+      max-width: 480px;
+      font-size: 1.5rem;
+      line-height: 1.8125rem;
+    }
+  }
+
+  &__img-desktop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 835px;
+    @include mq (desktop-wide, max) {
+      width: 615px;
+    }
+    @include mq (tablet-wide, max) {
+      display: none;
+    }
+  }
+  &__img-mobile {
+    @include mq (tablet-wide) {
+      display: none;
+    }
+  }
+  
+  &__btn {
+    margin-top: 32px;
+
+    .button {
+      width: 251px;
+      max-width: 100%;
+      height: 59px;
+    }
+  }
+
+
+}

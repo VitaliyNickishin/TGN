@@ -1,0 +1,152 @@
+.footer {
+  padding: 10rem 0 4rem;
+  position: relative;
+  background-size: cover;
+  mix-blend-mode: screen;
+  width: 100%;
+  &-inner {
+    background: url('../img/bg-footer-mobile.png') no-repeat bottom center;
+    opacity: 0.25;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include mq ("376") {
+      background: url('../img/bg-footer-desktop.png') no-repeat bottom center;
+      background-size: cover;
+      
+    }
+  }
+  &::before {
+    content: '';
+    background: url('../img/coin-3-foot.png') no-repeat;
+    width: 92px;
+    height: 114px;
+    position: absolute;
+    left: 230px;
+    top: -70px;
+    animation: MoveUpDown 3s linear infinite;
+    @include mq (tablet-wide, max) {
+      display: none;
+    }
+  }
+  @include mq (tablet-wide, max) {
+    padding-top: 3.125rem;
+    padding-bottom: 1rem;
+  }
+  .column {
+    z-index: 2;
+  }
+  
+  
+  .title-wrap {
+    @include mq (tablet, max) {
+      text-align: center;
+    }
+    
+  }
+  &-form {
+    margin-top: 48px;
+    margin-bottom: 33px;
+    width: 558px;
+    max-width: 100%;
+    @include mq (tablet-wide, max) {
+      margin-top: 137px;
+      margin-bottom: 25px;
+      padding: 32px 24px;
+    }
+    @include mq(phablet, max) {
+      text-align: center;
+    }
+    .h4 {
+      @include mq(phablet, max) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    .input-wrap {
+      padding-top: 23px;
+      @include space-between;
+      @include mq (phablet, max) {
+        flex-direction: column;
+      }
+    }
+    input {
+      width: 304px;
+      @include mq (phablet, max) {
+        width: 100%;
+      }
+    }
+    .button {
+      width: 168px;
+      margin-left: 15px;
+      @include mq (phablet, max) {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 16px;
+      }
+    }
+  }
+  .img-wrap {
+    position: absolute;
+    top: -190px;
+    right: -80px;
+    max-width: 870px;
+    z-index: 1;
+    @include mq ("1650", max) {
+      right: 0;
+      max-width: 835px;
+    }
+    @include mq (tablet-wide, max) {
+      top: 110px;
+      width: 120%;
+      max-width: 490px;
+    }
+    
+  }
+  .social-wrap {
+    .h4 {
+      @include mq (desktop-wide, max) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  &-copyright {
+    padding-top: 115px;
+    justify-content: space-between;
+    @include mq (tablet, max) {
+      padding-top: 60px;
+    }
+    .column {
+      padding-top: 20px;
+    }
+    .nav {
+      ul {
+        @include mq (phablet, max) {
+          @include space-between;
+        }
+        li {
+          &:first-child {
+            padding-left: 0;
+          }
+          @include mq (phablet, max) {
+            padding: 0;
+          }
+        }
+      }
+    }
+    .copy {
+      font-size: 14px;
+      line-height: 155%;
+      opacity: 0.6;
+      text-align: right;
+      font-family: $light_font;
+      @include mq (phablet, max) {
+        text-align: center;
+      }
+    }
+  }
+}
+

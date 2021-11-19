@@ -1,0 +1,227 @@
+//It’s our Inner Club.
+.slogan {
+  font-size: $large-font-size;
+  font-weight: bold_font;
+  line-height: 1.6875rem;
+  letter-spacing: 0.375em;
+  text-transform: uppercase;
+  color: $white;
+  @include mq (tablet, max) {
+    font-size: $medium-font-size;
+    line-height: 1.375rem;
+    letter-spacing: 0.375em;
+  }
+}
+
+//yellow btn
+.banner-info {
+  position: relative;
+  @include flex-center;
+  margin: auto;
+  max-width: 520px;
+  height: 72px;
+  background: $lemon_color;
+  box-shadow: 0px 5px 40px rgba(255, 223, 109, 0.24);
+  border-radius: 8px;
+  transform: skewX(-15deg);
+  z-index: 3;
+  @include mq (desktop-wide, max) {
+    max-width: 400px;
+  }
+  @include mq (tablet, max) {
+    max-width: 300px;
+    height: 57px;
+    padding: 0 47px;
+    z-index: 0;
+  }
+  @include mq (m, max) {
+    padding: 0 37px;
+  }
+  p {
+    font-size: 22px;
+    line-height: 100%;
+    font-family: $medium_font;
+    color: #151926;
+    text-align: center;
+    transform: skewX(15deg);
+    @include mq (desktop-wide, max) {
+      font-size: 16px;
+    }
+  }
+}
+//benefits card
+.content-box {
+  margin: 8px;
+  padding: 38px 15px 15px;
+  position: relative;
+  width: 344px;
+  min-height: 218px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(31, 38, 60, 0.6);
+  border: 1px solid #334A70;
+  border-radius: 24px;
+  @include mq (phablet, max) {
+    padding: 30px 10px 10px;
+    min-height: 168px;
+    margin: 6px;
+  }
+  @include mq (m, max) {
+    padding: 15px 5px 5px;
+    min-height: 138px;
+  }
+  &__counter {
+    font-size: 4rem;
+    line-height: 4.8125rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+    background: -webkit-linear-gradient(359deg, #314897 -10%, #5DF0F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include mq (phablet, max) {
+      font-size: 2rem;
+      line-height: 2.4375rem;
+    }
+    .sing-more {
+      margin-right: -20px;
+      @include mq (phablet, max) {
+        margin-right: -10px;
+      }
+    }
+    .sing-percent {
+      margin-left: -20px;
+      @include mq (phablet, max) {
+        margin-left: -10px;
+      }
+    }
+  }
+  p {
+    margin-top: 18px;
+    max-width: 205px;
+    @include mq (phablet, max) {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      font-size: .875rem;
+      height: 100%;
+    }
+    @include mq (m, max) {
+      font-size: .75rem;
+    }
+    
+  }
+}
+//fire from rocket
+.red-smoke {
+  content: '';
+  width: 400px;
+  height: 480px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #F84811;
+  opacity: 0.3;
+  filter: blur(150px);
+  @include mq (desktop-wide, max) {
+    width: 200px;
+    height: 480px;
+  }
+}
+.blue-smoke {
+  content: '';
+  width: 596px;
+  height: 596px;
+  position: absolute;
+  left: 57px;
+  top: 190.09px;
+  background: #546BB5;
+  opacity: 0.15;
+  filter: blur(245px);
+  @include mq (desktop-wide, max) {
+    width: 300px;
+    height: 380px;
+  }
+}
+
+.has-bitcoin {
+  &::after {
+    content: '';
+    background-image: url('../img/bitcoin.png');
+    background-repeat: no-repeat;
+    background-size: 85px 80px;
+    width: 85px;
+    height: 80px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+  }
+}
+//general for roadmap list
+.has-check,
+.has-point,
+.has-arrow {
+  position: relative;
+  padding-left: 24px;
+  &::before {
+    content: '';
+    margin-right: 14px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+  }
+}
+.has-check {
+  &::before {
+    background: url('../img/check.svg') no-repeat;
+    width: 10px;
+    height: 10px;
+  }
+}
+.has-point {
+  &::before {
+    background: url('../img/point.svg') no-repeat;
+    width: 3px;
+    height: 3px;
+  }
+}
+.has-arrow {
+  &::before {
+    background: url('../img/arrow-next.svg') no-repeat;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.coin-twix {
+  .small {
+    position: absolute;
+    width: 158px;
+    height: 170px;
+    left: -60px;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .big {
+    position: relative;
+    width: 245px;
+    height: 290px;
+    z-index: 1;
+  }
+  @include mq ("991", max) {
+    .small {
+      width: 83px;
+      height: 90px;
+      left: -10px;
+      bottom: -20px;
+    }
+
+    .big {
+      width: 107px;
+      height: 128px;
+    }
+  }
+}
+
+

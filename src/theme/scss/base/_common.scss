@@ -1,0 +1,207 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth; // for anchor tags
+}
+
+body {
+  font-family: $regular_font;
+  margin: 0px;
+  font-size: $base-font-size;
+  line-height: 24px;
+  color: $primary_color;
+  background-color: $main-bg;
+  @include mq(tablet) {
+    font-size: $medium-font-size;
+    line-height: 27px;
+  }
+}
+
+//set for footer down
+html,
+body {
+  height: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  flex: 0 0 auto;
+}
+.main {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+strong,
+b,
+.bold {
+  font-family: $bold_font;
+}
+
+.title-wrap {
+  .undertitle {
+    font-family: $regular_font;
+    
+    @include mq(tablet, max) {
+      font-size: 1.125rem;
+      line-height: 1.3125rem;
+    }
+  }
+  span {
+    font-family: $normal_font;
+    color: $third_color;
+  }
+}
+//Be in The DeFi’s Inner Club and get it all, form
+.box-content-gradient {
+  padding: 35px;
+  background: linear-gradient(97.93deg, #F4D173 -1.68%, #6E21A9 100.84%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+}
+//main btn
+.button {
+  @include flex-center;
+  height: 54px;
+  width: 216px;
+  font-size: 18px;
+  font-family: $medium_font;
+  background: linear-gradient(261.04deg, #5AACF8 -5.62%, #395FE4 106.69%);
+  border-radius: 8px;
+  border: 0;
+  color: $primary_color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s ease-out;
+
+  &:hover {
+    color: $secondary_color;
+    // background: linear-gradient(0deg, #ccc, #ccc);
+    background: darken($color: $white, $amount: 10%)
+  }
+}
+//btn learn more
+.learn-more {
+  font-family: $medium_font;
+  color: $rose;
+  svg {
+    margin-left: 16px;
+  }
+}
+
+//for section
+.content {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+//overlay for section
+.bg-overlay {
+  // background-color: rgba(209, 166, 132, 0.8);
+  background-color: $bg-overlay;
+  opacity: 0.8;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  color: $primary_color;
+  text-decoration: none;
+  &:hover {
+    color: darken($color: $primary_color, $amount: 10%);
+  }
+}
+
+.shadow{
+  box-shadow: 0px 4px 54px rgba(170, 170, 170, 0.25);
+}
+
+.top-shadow{
+  box-shadow: inset 0px 24px 19px -15px rgba(170, 170, 170, 0.25);
+}
+
+// color classes
+.white-color{
+  color: $white;
+}
+.primary-color{
+  color:  $primary_color;
+}
+.primary-background{
+  background-color:  $primary_color;
+  color: $white;
+
+  .content-header, .preview-font{
+      color: $white;
+  }
+}
+
+.off-white-background{
+  background-color: $off_white;
+}
+
+.secondary-color{
+  color: $secondary_color;
+}
+.secondary-background{
+  background-color:  $secondary_color;
+}
+
+.white-background{
+  background-color: $white;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+//general set for slick sleder when load
+.custom-slider {
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+
+  &.slick-initialized {
+    height: auto;
+    overflow: inherit;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+
+
