@@ -59,10 +59,8 @@ b,
 .title-wrap {
   .undertitle {
     font-family: $regular_font;
-    
-    @include mq(tablet, max) {
-      font-size: 1.125rem;
-      line-height: 1.3125rem;
+    @include mq(tablet-wide, max) {
+      text-align: center;
     }
   }
   span {
