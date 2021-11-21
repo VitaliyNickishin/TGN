@@ -148,7 +148,7 @@
     line-height: 3.6rem;
     font-family: $medium_font;
     color: $primary_color;
-    letter-spacing: 2px;
+    letter-spacing: 0.02em;
 
     @include mq(desktop-wide, max) {
       font-size: 2rem;
@@ -167,7 +167,7 @@
     line-height: 48px;
     font-family: $medium_font;
     color: $primary_color;
-    letter-spacing: 5px;
+    letter-spacing: 0.05em;
     // @include mq(desktop-wide, max) {
     //   font-size: 2.2rem;
     //   line-height: 2.2rem;
@@ -180,13 +180,19 @@
 
   h3,
   .h3 {
-    font-size: 2rem; //32px
+    font-size: 2.25rem; //36px
     font-family: $medium_font;
-    line-height: 38px;
+    line-height: 44px;
     color: $primary_color;
+    letter-spacing: 0.05em;
+    @include mq(desktop-wide, max) {
+      font-size: 1.75rem;//28px
+      line-height: 36px;
+    }
 
     @include mq(tablet, max) {
-      font-size: 1.6rem;
+      font-size: 1.25rem;//20px
+      line-height: 24px;
     }
   }
 

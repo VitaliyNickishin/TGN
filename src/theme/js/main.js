@@ -6,6 +6,7 @@ $(function() {
   initAos();
   initCoinParallax();
   initAccordion();
+  initParallax();
 
   
   
@@ -187,4 +188,21 @@ let checkClass = () => {
            console.log('checked');
         }
     });
+}
+
+let initParallax = () => {
+  let scene = $('#banner-parallax');
+  $(window).on('mousemove', (event) => {
+    scene.find('.layer').each(function() {
+      let transform = "translate(-" + event.pageX * parseFloat($(this).attr('data-speedX')) * 0.2 +
+      "px, -" + event.pageY * parseFloat($(this).attr("data-speedY")) * 0.2 + "px)";
+      $(this).css({
+        "-o-transform": transform,
+        "transform": transform,
+        "-webkit-transform": transform,
+        "-moz-transform": transform,
+        "-ms-transform": transform,
+      });
+    });
+  });
 }

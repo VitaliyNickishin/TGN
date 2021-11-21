@@ -1,0 +1,205 @@
+.seciton-banner {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  @include mq(tablet, max) {
+    padding-top: 46px;
+    padding-bottom: 52px;
+  }
+}
+
+.banner {
+  padding: 60px 40px 40px;
+  background: linear-gradient(0deg, rgba(18, 33, 70, 0.5) 0%, rgba(78, 78, 78, 0) 101.39%);
+  border: 1px solid #172754;
+  backdrop-filter: blur(150px);
+  border-radius: 8px;
+  @include mq("991", max) {
+    padding: 35px 32px 0;
+  }
+  @include mq(tablet, max) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &::before,
+  &::after {
+    content: '';
+    height: 1px;
+    max-width: 100%;
+    position: absolute;
+  }
+  &::before {
+    width: 719px;
+    background: linear-gradient(90deg, rgba(17, 17, 25, 0) 2.85%, #5298F3 42.16%, rgba(17, 17, 25, 0) 102.17%);   
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    width: 549px;
+    background: linear-gradient(90deg, rgba(17, 17, 25, 0) 44.79%, #5298F3 73.78%, rgba(17, 17, 25, 0) 102.17%);
+    bottom: 0;
+    right: 40px;
+  }
+  &-inner {
+    //man
+    &::before {
+      content: '';
+      background: url('../img/banner/banner-img.png') no-repeat right;
+      background-size: contain;
+      position: absolute;
+      right: 100px;
+      bottom: 0;
+      width: 456px;
+      height: 456px;
+      @include mq(desktop-wide, max) {
+        right: 30px;
+        width: 410px;
+        height: 410px;
+      }
+      @include mq("991", max) {
+        background: none;
+      }
+    }
+    
+  }
+  &__title {
+    @include mq("991", max) {
+      text-align: center;
+    }
+    @include mq(tablet, max) {
+      padding: 0 20px;
+    }
+    @include mq(m, max) {
+      padding: 0;
+    }
+  }
+  &__btn {
+    margin-top: 48px;
+    .button {
+      width: 225px;
+      height: 59px;
+      @include mq("991", max) {
+        margin: auto;
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    @include mq("991", max) {
+      padding-top: 50px;
+    }
+    .person {
+      @include mq("991") {
+        display: none;
+      }
+      width: 259px;
+      margin-left: auto;
+      @include mq(m, max) {
+        width: 200px;
+      }
+    }
+
+    .bulb,
+    .note,
+    .business,
+    .pin,
+    .list {
+      position: absolute;
+    }
+    .bulb {
+      top: -220px;
+      right: 270px;
+      @include mq(desktop-wide, max) {
+        width: 70px;
+        top: -190px;
+        right: 180px;
+      }
+      @include mq("991", max) {
+        width: 52px;
+        top: 20px;
+        right: 130px;
+      }
+      @include mq(m, max) {
+        width: 42px;
+        top: 30px;
+        right: 100px;
+      }
+    }
+    .note {
+      top: -180px;
+      left: 120px;
+      @include mq(desktop-wide, max) {
+        width: 120px;
+        top: -170px;
+        left: auto;
+      }
+      @include mq("991", max) {
+        width: 83px;
+        top: 40px;
+        left: auto;
+        right: 200px;
+      }
+      @include mq(m, max) {
+        width: 73px;
+        right: 150px;
+      }
+    }
+    .business {
+      top: -90px;
+      left: 0;
+      @include mq(desktop-wide, max) {
+        width: 100px;
+      }
+      @include mq("991", max) {
+        width: 76px;
+        top: 100px;
+        left: auto;
+        right: 255px;
+      }
+      @include mq(m, max) {
+        width: 56px;
+        top: 90px;
+        right: 215px;
+      }
+    }
+    .pin {
+      top: -66px;
+      left: 115px;
+      @include mq(desktop-wide, max) {
+        width: 30px;
+        top: -70px;
+        left: 90px;
+      }
+      @include mq("991", max) {
+        width: 23px;
+        top: 110px;
+        left: auto;
+        right: 250px;
+      }
+      @include mq(m, max) {
+        width: 16px;
+        right: 200px;
+      }
+    }
+    .list {
+      top: 145px;
+      left: 100px;
+      @include mq(desktop-wide, max) {
+        width: 40px;
+        top: 135px;
+        left: 40px;
+      }
+      @include mq("991", max) {
+        width: 35px;
+        top: 240px;
+        left: auto;
+        right: 270px;
+      }
+      @include mq(m, max) {
+        width: 25px;
+        top: 200px;
+        right: 210px;
+      }
+    }
+    
+  }
+}
