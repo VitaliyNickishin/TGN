@@ -4,8 +4,10 @@ $(function() {
   mobileBurger();
   initSliderRoadmap();
   initAos();
-  initCounterNumber();
-  initCoinParallax();;
+  initCoinParallax();
+  initAccordion();
+
+  
   
 });
 
@@ -76,25 +78,7 @@ let initSliderRoadmap = () => {
   // });
 };
 
-/* counter for benefits */ 
-let initCounterNumber = () => {
-  var stop = $(".hero").offset().top;
-  $(window).on('scroll', function() {
-    if ($(window).scrollTop() > stop ) {
-      $(window).off("scroll");
-      $('.count').each(function () {
-        var $this = $(this);
-        jQuery({ Counter: 0 }).animate({ Counter: $this.attr("data-count") }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function () {
-                $this.text(Math.ceil(this.Counter));
-            }
-        });
-      });
-    };
-  });
-}
+
 /* use parallax for coin in roadmap section */ 
 let initCoinParallax = () => {
   const image = document.getElementsByClassName('coin-parallax');
@@ -107,117 +91,100 @@ let initCoinParallax = () => {
   });
 }
 
-// let initParticlesJS = function () {
-//   particlesJS("particles-js", {
-//     "particles": {
-//       "number": {
-//         "value": 355,
-//         "density": {
-//           "enable": true,
-//           "value_area": 789.1476416322727
-//         }
-//       },
-//       "color": {
-//         "value": "#ffffff"
-//       },
-//       "shape": {
-//         "type": "circle",
-//         "stroke": {
-//           "width": 0,
-//           "color": "#000000"
-//         },
-//         "polygon": {
-//           "nb_sides": 5
-//         },
-//         "image": {
-//           "src": "img/github.svg",
-//           "width": 100,
-//           "height": 100
-//         }
-//       },
-//       "opacity": {
-//         "value": 0.48927153781200905,
-//         "random": false,
-//         "anim": {
-//           "enable": true,
-//           "speed": 0.2,
-//           "opacity_min": 0,
-//           "sync": false
-//         }
-//       },
-//       "size": {
-//         "value": 2,
-//         "random": true,
-//         "anim": {
-//           "enable": true,
-//           "speed": 2,
-//           "size_min": 0,
-//           "sync": false
-//         }
-//       },
-//       "line_linked": {
-//         "enable": false,
-//         "distance": 150,
-//         "color": "#ffffff",
-//         "opacity": 0.4,
-//         "width": 1
-//       },
-//       "move": {
-//         "enable": true,
-//         "speed": 0.2,
-//         "direction": "none",
-//         "random": true,
-//         "straight": false,
-//         "out_mode": "out",
-//         "bounce": false,
-//         "attract": {
-//           "enable": false,
-//           "rotateX": 600,
-//           "rotateY": 1200
-//         }
-//       }
-//     },
-//     "interactivity": {
-//       "detect_on": "canvas",
-//       "events": {
-//         "onhover": {
-//           "enable": true,
-//           "mode": "bubble"
-//         },
-//         "onclick": {
-//           "enable": true,
-//           "mode": "push"
-//         },
-//         "resize": true
-//       },
-//       "modes": {
-//         "grab": {
-//           "distance": 400,
-//           "line_linked": {
-//             "opacity": 1
-//           }
-//         },
-//         "bubble": {
-//           "distance": 83.91608391608392,
-//           "size": 1,
-//           "duration": 3,
-//           "opacity": 1,
-//           "speed": 3
-//         },
-//         "repulse": {
-//           "distance": 200,
-//           "duration": 0.4
-//         },
-//         "push": {
-//           "particles_nb": 4
-//         },
-//         "remove": {
-//           "particles_nb": 2
-//         }
-//       }
-//     },
-//     "retina_detect": true
-//   });
-// }
+let initAccordion = () => {
+  // initialize accordion
+				// $('#Accordion ul').each( function() {
+				// 	var currentURI = window.location.href;
+				// 	var links = $('a', this);
+				// 	var collapse = true;
+				// 	for (var i = 0; i < links.length; i++) {
+				// 		var elem = links.eq(i);
+				// 		var href = elem.attr('href');
+				// 		var hrefLength = href.length;
+				// 		var compareTo = currentURI.substr(-1*hrefLength);
+						
+				// 		if (href == compareTo) {
+				// 			collapse = false;
+				// 			$(elem).css({ 'background-color': '#a7a9ac', 'color': '#000' });
+				// 			break;
+				// 		}
+						
+						
+				// 	};
+					
+					
+				// 	if (collapse) {
+				// 		$(this).hide();
+						
+				// 	}
+				// });
+				  
+				
+				// $('[data-action="accordion"]').on('click', 'div', function() {
+        //   let title = $('[data-action="accordion"] div');
+        //   let sub = $('[data-action="accordion"] .submenu');
+        //   let wrap = $(this).parent();
+				// 	title.removeClass( "up" );
+				// 	title.addClass( "down" );
+				// 	var ul = $(this).next('ul');
+				// 	if (ul.is(':visible')) {
+				// 		ul.slideUp(500);
+        //     wrap.removeClass( 'active' );
+						
+				// 	} else {
+				// 		$('[data-action="accordion"] ul').not(ul).slideUp(500);
+				// 		ul.slideDown(500);
+        //     wrap.addClass('active');
+				// 		var div = $(this)
+				// 	  $( this ).toggleClass( "up" );
+				// 	}
+          
+						
+					
+				// });
+
+    //   $("ul.tabs__caption").on("click", "li:not(.active)", function() {
+    //   $(this)
+    //     .addClass("active")
+    //     .siblings()
+    //     .removeClass("active")
+    //     .closest("div.tabs")
+    //     .find("div.tabs__content")
+    //     .removeClass("active")
+    //     .eq($(this).index())
+    //     .addClass("active");
+    // });
+
+    $('[data-action="accordion"] .tab').on('click', function() {
+      $(this).addClass('active')
+      $('[data-action="accordion"] .tab').removeClass('active');
+      $(this).addClass('active');
+      checkClass()
+    });
+    
+}
 
 
+let checkClass = () => {
+  // $('[data-action="accordion"] .tab').on('click', function() {
+      
+  //     if($(this).hasClass('active')) {
+  //       let test = $('[data-action="accordion"] .tab-content');
+  //       console.log('hasclass');
+  //       test.css('display', 'none');
+  //     } else {
+  //       return false;
+  //     }
+  //   });
+  $('[data-action="accordion"] .tab').on('click', function(){     
+        // if($("#agree").attr("checked") == 'checked') {  
+        //     $('#target').submit(function(){});
+        // } else {
+        //     window.alert('Дайте свое согласие на обработку данных!');
+        //     $("#agree").css('border', '1px solid red');
+        // }
+        if ($('[type="radio"]').is(':checked')) {
+           console.log('checked');
+        }
+    });
+}

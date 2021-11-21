@@ -18,19 +18,7 @@
       
     }
   }
-  &::before {
-    content: '';
-    background: url('../img/coin-3-foot.png') no-repeat;
-    width: 92px;
-    height: 114px;
-    position: absolute;
-    left: 230px;
-    top: -70px;
-    animation: MoveUpDown 3s linear infinite;
-    @include mq (tablet-wide, max) {
-      display: none;
-    }
-  }
+  
   @include mq (tablet-wide, max) {
     padding-top: 3.125rem;
     padding-bottom: 1rem;
