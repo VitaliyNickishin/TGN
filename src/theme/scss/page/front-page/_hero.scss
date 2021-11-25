@@ -30,8 +30,17 @@
     left: 0;
     top: 0;
     width: 835px;
+    @include mq ("1730", max) {
+      width: 710px;
+    }
     @include mq (desktop-wide, max) {
       width: 615px;
+    }
+    @include mq (desktop, max) {
+      width: 545px;
+    }
+    @include mq (sm-comp, max) {
+      width: 495px;
     }
     @include mq (tablet-wide, max) {
       display: none;

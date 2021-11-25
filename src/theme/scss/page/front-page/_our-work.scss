@@ -1,0 +1,221 @@
+.our-work {
+  padding-top: 100px;
+  padding-bottom: 65px;
+  h2 {
+    margin-bottom: 84px;
+    @include mq(tablet, max) {
+      margin-bottom: 50px;
+    }
+  }
+  &__img {
+    @include mq(tablet-wide, max) {
+      display: none;
+    }
+    // &::before {
+    //   content: '';
+    //   background: radial-gradient(34.03% 34.03% at 60.85% 51.3%, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    //   background-size: cover;
+    //   width: 549px;
+    //   height: 500px;
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 40px;
+    // }
+    &::after {
+      content: '';
+      background: url('../img/platonic.png') no-repeat center;
+      background-size: contain;
+      width: 298px;
+      height: 293px;
+      position: absolute;
+      bottom: -110px;
+      left: 50px;
+    }
+  }
+}
+
+
+.step {
+  &s {
+    position: relative;
+    p {
+      position: absolute;
+      font-size: 22px;
+      line-height: 140%;
+      @include mq(tablet, max) {
+        font-size: 1.125rem;//18px
+        line-height: 1.5625rem;//25px
+      }
+    }
+  }
+  &-one {
+    p {
+      left: 104px;
+      top: -10px;
+      @include mq(tablet, max) {
+        left: 75px;
+        top: -12px;
+      }
+      @include mq(phone-wide, max) {
+        top: -20px;
+      }
+    }
+  }
+  &-two {
+    p {
+      left: 145px;
+      top: 90px;
+      @include mq(tablet, max) {
+        left: 75px;
+        top: 90px;
+      }
+      @include mq(m, max) {
+        top: 80px;
+      }
+    }
+  }
+  &-three {
+    p {
+      left: 185px;
+      top: 185px;
+      @include mq(tablet, max) {
+        left: 75px;
+        top: 205px
+      }
+      @include mq(phone-wide, max) {
+        top: 195px;
+      }
+    }
+  }
+  &-four {
+    p {
+      left: 185px;
+      top: 315px;
+      @include mq(tablet, max) {
+        left: 75px;
+      }
+      @include mq(phone-wide, max) {
+        top: 300px;
+      }
+    }
+  }
+  &-five {
+    p {
+      left: 150px;
+      top: 415px;
+      @include mq(tablet, max) {
+        left: 75px;
+      }
+      @include mq(phone-wide, max) {
+        top: 405px;
+      }
+    }
+  }
+  &-six {
+    p {
+      left: 103px;
+      top: 515px;
+      @include mq(tablet, max) {
+        left: 75px;
+      }
+    }
+  }
+}
+.number {
+  @include flex-center;
+  width: 32px;
+  height: 32px;
+  font-family: $number_font;
+  font-size: $base-font-size;
+  background: $main-bg-gradient;
+  color: $primary_color;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  &-one {
+    top: -15px;
+    left: -15px;
+    @include mq(tablet, max) {
+      left: 15px;
+    }
+  }
+  &-two {
+    top: 87px;
+    left: 48px;
+    @include mq(tablet, max) {
+      left: 15px;
+    }
+  }
+  &-three {
+    top: 200px;
+    left: 80px;
+    @include mq(tablet, max) {
+      left: 15px;
+    }
+  }
+  &-four {
+    top: 312px;
+    left: 80px;
+    @include mq(tablet, max) {
+      left: 15px;
+    }
+  }
+  &-five {
+    top: 425px;
+    left: 50px;
+    @include mq(tablet, max) {
+      left: 15px;
+    }
+  }
+  &-six {
+    top: 527px;
+    left: -15px;
+    @include mq(tablet, max) {
+      left: 15px;
+    }
+  }
+  &::before {
+    content: '';
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    opacity: 0.05;
+    border: 1px solid #5AACF8;
+    position: absolute;
+
+  }
+  &::after {
+    content: '';
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    opacity: 0.25;
+    border: 1px solid #5AACF8;
+    position: absolute;
+
+  }
+}
+
+.border {
+  width: 104px;
+  height: 546px;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.circle {
+  width: 850px;
+  height: 850px;
+  border-radius: 50%;
+  border: 2px solid $primary_color;
+  opacity: .15;
+  position: absolute;
+  left: -750px;
+  top: 50%;
+  transform: translateY(-50%);
+  @include mq(tablet, max) {
+    width: 780px;
+    border-radius: 0;
+  }
+}

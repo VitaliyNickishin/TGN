@@ -13,7 +13,7 @@
   border: 1px solid #172754;
   backdrop-filter: blur(150px);
   border-radius: 8px;
-  @include mq("991", max) {
+  @include mq(tablet-wide, max) {
     padding: 35px 32px 0;
   }
   @include mq(tablet, max) {
@@ -40,7 +40,7 @@
     right: 40px;
   }
   &-inner {
-    //man
+    //man desktop
     &::before {
       content: '';
       background: url('../img/banner/banner-img.png') no-repeat right;
@@ -55,14 +55,14 @@
         width: 410px;
         height: 410px;
       }
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         background: none;
       }
     }
     
   }
   &__title {
-    @include mq("991", max) {
+    @include mq(tablet-wide, max) {
       text-align: center;
     }
     @include mq(tablet, max) {
@@ -77,18 +77,18 @@
     .button {
       width: 225px;
       height: 59px;
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         margin: auto;
       }
     }
   }
   &__img {
     position: relative;
-    @include mq("991", max) {
+    @include mq(tablet-wide, max) {
       padding-top: 50px;
     }
     .person {
-      @include mq("991") {
+      @include mq(tablet-wide) {
         display: none;
       }
       width: 259px;
@@ -113,7 +113,7 @@
         top: -190px;
         right: 180px;
       }
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         width: 52px;
         top: 20px;
         right: 130px;
@@ -132,7 +132,7 @@
         top: -170px;
         left: auto;
       }
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         width: 83px;
         top: 40px;
         left: auto;
@@ -149,7 +149,7 @@
       @include mq(desktop-wide, max) {
         width: 100px;
       }
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         width: 76px;
         top: 100px;
         left: auto;
@@ -169,7 +169,7 @@
         top: -70px;
         left: 90px;
       }
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         width: 23px;
         top: 110px;
         left: auto;
@@ -188,7 +188,7 @@
         top: 135px;
         left: 40px;
       }
-      @include mq("991", max) {
+      @include mq(tablet-wide, max) {
         width: 35px;
         top: 240px;
         left: auto;
