@@ -138,13 +138,6 @@ a {
   }
 }
 
-.shadow{
-  box-shadow: 0px 4px 54px rgba(170, 170, 170, 0.25);
-}
-
-.top-shadow{
-  box-shadow: inset 0px 24px 19px -15px rgba(170, 170, 170, 0.25);
-}
 
 // color classes
 .white-color{
@@ -180,6 +173,9 @@ a {
 
 .text-center {
   text-align: center;
+}
+.hide {
+  display: none;
 }
 
 //general set for slick sleder when load

@@ -30,3 +30,12 @@
     url('../fonts/helvetica/helveticaneuecyr-medium.svg#helveticaneuecyr-medium') format('svg');
   /* Chrome < 4, Legacy iOS */
 }
+@font-face {
+  font-family: 'Helvetica Neue Cyr Thin';
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Thin.eot');
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/helvetica/HelveticaNeueCyr-Thin.woff') format('woff'),
+    url('../fonts/helvetica/HelveticaNeueCyr-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

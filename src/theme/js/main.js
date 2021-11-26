@@ -5,9 +5,10 @@ $(function() {
   initSliderRoadmap();
   initAos();
   initCoinParallax();
-  initAccordion();
+  closeAccordion();
   initParallax();
-
+  addActive();
+  showImg();
   
   
 });
@@ -92,102 +93,58 @@ let initCoinParallax = () => {
   });
 }
 
-let initAccordion = () => {
-  // initialize accordion
-				// $('#Accordion ul').each( function() {
-				// 	var currentURI = window.location.href;
-				// 	var links = $('a', this);
-				// 	var collapse = true;
-				// 	for (var i = 0; i < links.length; i++) {
-				// 		var elem = links.eq(i);
-				// 		var href = elem.attr('href');
-				// 		var hrefLength = href.length;
-				// 		var compareTo = currentURI.substr(-1*hrefLength);
-						
-				// 		if (href == compareTo) {
-				// 			collapse = false;
-				// 			$(elem).css({ 'background-color': '#a7a9ac', 'color': '#000' });
-				// 			break;
-				// 		}
-						
-						
-				// 	};
-					
-					
-				// 	if (collapse) {
-				// 		$(this).hide();
-						
-				// 	}
-				// });
-				  
-				
-				// $('[data-action="accordion"]').on('click', 'div', function() {
-        //   let title = $('[data-action="accordion"] div');
-        //   let sub = $('[data-action="accordion"] .submenu');
-        //   let wrap = $(this).parent();
-				// 	title.removeClass( "up" );
-				// 	title.addClass( "down" );
-				// 	var ul = $(this).next('ul');
-				// 	if (ul.is(':visible')) {
-				// 		ul.slideUp(500);
-        //     wrap.removeClass( 'active' );
-						
-				// 	} else {
-				// 		$('[data-action="accordion"] ul').not(ul).slideUp(500);
-				// 		ul.slideDown(500);
-        //     wrap.addClass('active');
-				// 		var div = $(this)
-				// 	  $( this ).toggleClass( "up" );
-				// 	}
-          
-						
-					
-				// });
+let closeAccordion = () => {
+  //var 1
+//   $("input:checkbox").on('click', function() {
+//   // in the handler, 'this' refers to the box clicked on
+//   var $box = $(this);
+//   if ($box.is(":checked")) {
+//     // the name of the box is retrieved using the .attr() method
+//     // as it is assumed and expected to be immutable
+//     var group = "input:checkbox[name='" + $box.attr("name") + "']";
+//     // the checked state of the group/box on the other hand will change
+//     // and the current value is retrieved using .prop() method
+//     $(group).prop("checked", false);
+//     $box.prop("checked", true);
+//   } else {
+//     $box.prop("checked", false);
+//   }
+// });
 
-    //   $("ul.tabs__caption").on("click", "li:not(.active)", function() {
-    //   $(this)
-    //     .addClass("active")
-    //     .siblings()
-    //     .removeClass("active")
-    //     .closest("div.tabs")
-    //     .find("div.tabs__content")
-    //     .removeClass("active")
-    //     .eq($(this).index())
-    //     .addClass("active");
+//var 2
+  $('input[type="checkbox"]').on('change', function() {
+    let box = $(this);
+    $('input[type="checkbox"]').not(box).prop('checked', false);
+    // if (box.is(":checked")) {
+    //   let tab = $('[data-action="accordion"] .tab');
+    //   $(tab).addClass('active');
+    // } else {
+    //   $(tab).removeClass('active');
+    // }
+  });
+
+  
+
+    // $('[data-action="accordion"] .tab').on('click', function() {
+    //   $(this).addClass('active')
+    //   $('[data-action="accordion"] .tab').removeClass('active');
+    //   $(this).addClass('active');
+    //   checkClass()
     // });
-
-    $('[data-action="accordion"] .tab').on('click', function() {
-      $(this).addClass('active')
-      $('[data-action="accordion"] .tab').removeClass('active');
-      $(this).addClass('active');
-      checkClass()
-    });
     
 }
-
-
-let checkClass = () => {
-  // $('[data-action="accordion"] .tab').on('click', function() {
-      
-  //     if($(this).hasClass('active')) {
-  //       let test = $('[data-action="accordion"] .tab-content');
-  //       console.log('hasclass');
-  //       test.css('display', 'none');
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  $('[data-action="accordion"] .tab').on('click', function(){     
-        // if($("#agree").attr("checked") == 'checked') {  
-        //     $('#target').submit(function(){});
-        // } else {
-        //     window.alert('Дайте свое согласие на обработку данных!');
-        //     $("#agree").css('border', '1px solid red');
-        // }
-        if ($('[type="radio"]').is(':checked')) {
-           console.log('checked');
-        }
-    });
+// $( "#chbBlogsLabelsList input" ).on( "click", function() {
+//             if($(this).is(":checked")) { $(this).addClass("qqqq");}
+//    else {$(this).removeClass("qqqq");}
+// })
+let addActive = () => {
+  $(".accordion input").on('click', function(e) {
+    if ($(this).is(":checked")) {
+      $(this).parent().addClass('active');
+    } else {
+      $(this).parent().removeClass('active');
+    }
+  });
 }
 
 let initParallax = () => {
@@ -205,4 +162,20 @@ let initParallax = () => {
       });
     });
   });
+}
+
+let showImg = () => {
+  $('input[type="checkbox"]').on('click', () => {
+    console.log('clisk');
+    let value = $(this).val();
+    console.log(value);
+    if(value === 'paid'){
+        $(this).closest('.offer').find('[data-img="paid"]').show();
+        $(this).closest('.offer').find('[data-img="pr"]').hide();
+    }
+    // else{
+    //     $('#one').hide();
+    //     $('#two').show();
+    // }
+  })
 }

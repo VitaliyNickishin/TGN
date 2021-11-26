@@ -41,8 +41,9 @@
 }
 
 .accordion {
-	width: 100%;
-	padding: 0 15px;
+	width: 620px;
+	max-width: 100%;
+	margin-left: auto;
 
 	.tab {
 		position: relative;
@@ -50,11 +51,12 @@
 		border: 1px solid transparent;
 		padding: 24px 24px 0;
 		border: 1px solid transparent;
-		.active {
+		&.active {
 			background: rgba(18, 16, 26, 0.9);
 			border: 1px solid rgba(218, 218, 218, 0.15);
 			backdrop-filter: blur(4px);
 			border-radius: 16px;
+			padding-bottom: 24px;
 		}
 
 		input {
@@ -67,7 +69,7 @@
 				max-height: 100%;
 			}
 
-			&[type=radio]:checked+label::after {
+			&[type=checkbox]:checked+label::after {
 				transform: rotate(225deg);
 				top: 35px
 			}
@@ -81,7 +83,7 @@
 				position: absolute;
 				transform: rotate(45deg);
 				top: 25px;
-				right: 5px;
+				right: 25px;
 				border: solid $white;
 				border-width: 0 6px 6px 0;
 				padding: 5px;
