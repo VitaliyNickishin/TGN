@@ -230,6 +230,9 @@
     color: $primary_color;
     border-radius: 4px;
     border: 1px solid #4A5061;
+    font-family: $helvetca_reg_font;
+    opacity: 0.5;
+    line-height: 120%;
     &::placeholder {
       color: $placeholder_color;
     }

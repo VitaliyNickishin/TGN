@@ -3,12 +3,38 @@
   @include mq(tablet-small, max) {
     padding-top: 85px;
   }
+  //wave-mob
+  &::after {
+    content: '';
+    background: url('../img/wave-mob.png') no-repeat right;
+    background-size: contain;
+    position: absolute;
+    right: 0px;
+    top: -120px;
+    width: 290px;
+    height: 280px;
+    z-index: 1;
+
+    @include mq("991") {
+      display: none;
+    }
+    @include mq(tablet-small, max) {
+      top: -35px;
+    }
+  }
+  .h3 {
+    @include mq(tablet, max) {
+      padding-right: 80px;
+    }
+  }
   &-inner {
     padding: 68px 48px 40px;
+    position: relative;
     background: linear-gradient(0deg, rgba(18, 33, 70, 0.5) 0%, rgba(101, 126, 186, 0) 144.25%);
     border: 1px solid #172754;
     backdrop-filter: blur(150px);
     border-radius: 32px 32px 0px 0px;
+    z-index: 2;
     @include mq("991", max) {
       padding-bottom: 25px;
     }
@@ -16,7 +42,44 @@
       padding: 20px 12px 25px;
       border-radius: 24px 24px 0px 0px;
     }
+    &::before {
+      content: '';
+      background: url('../img/capsula.png') no-repeat center;
+      background-size: contain;
+      position: absolute;
+      left: -25px;
+      bottom: 15px;
+      width: 94px;
+      height: 98px;
 
+      @include mq("991", max) {
+        left: auto;
+        bottom: auto;
+        right: -25px;
+        top: -25px;
+        transform: rotate(270deg);
+        width: 101px;
+        height: 104px;
+      }
+      @include mq(tablet, max) {
+        right: -5px;
+      }
+    }
+    //girl
+    &::after {
+      content: '';
+      background: url('../img/footer-img.png') no-repeat right;
+      background-size: contain;
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      width: 310px;
+      height: 300px;
+      z-index: 3;
+      @include mq("991", max) {
+        background: none;
+      }
+    }
   }
   .undertitle {
     margin-top: 44px;
@@ -24,6 +87,7 @@
     width: 570px;
     max-width: 100%;
     text-align: left;
+    font-family: $helvetca_reg_font;
     @include mq(tablet, max) {
       margin-top: 16px;
     }
@@ -96,6 +160,26 @@
       font-size: 14px;
       line-height: 120%;
       font-family: $light_font;
+    }
+    &::before {
+      content: '';
+      background: url('../img/wave.png') no-repeat center;
+      background-size: contain;
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+      width: 135px;
+      height: 98px;
+
+      @include mq(desktop-wide, max) {
+        left: 15%;
+      }
+
+      @include mq("991", max) {
+        display: none;
+      }
+
+      
     }
   }
 
