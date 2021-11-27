@@ -30,7 +30,7 @@
 							<li><a href="#">Testimonials</a></li>
 							<li><a href="#">Leadership</a></li>
 						</ul>
-						<button type="button" class="button">Contact now</button>
+						<button type="button" class="button openmodal">Contact now</button>
 						<button class="burger" type="button"><span></span></button>
 					</nav>
 				</div>
@@ -23590,11 +23590,54 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-			
 		</footer>
+	</div>
+
+	<div class="modalbox">
+		<div class="modal-contact-us-wrap">
+			<div class="modal-contact-us">
+				<button class="burger close openmodal" type="button" area-label="modal"><span></span></button>
+				<div class="title-wrap">
+					<p class="h3">Contact us</p>
+					<p class="undertitle">Let us help you build and grow your company</p>
+				</div>
+				<form action="">
+					<div class="fieldset flex">
+						<div class="item">
+							<label for="name">How can we call you?</label>
+							<input type="text" name="" value="" id="name" placeholder="Enter your Name and Surname">
+						</div>
+						<div class="item">
+							<label for="tg">WhatsApp / Telegram</label>
+							<input type="text" name="text" value="" id="tg" placeholder="@">
+						</div>
+					</div>
+					<div class="fieldset">
+						<label for="email">E-mail</label>
+						<input type="text" name="email" type="email" value="" id="email" placeholder="Enter your E-mail">
+						<!-- <div class="error">Please, enter correct E-mail</div> -->
+					</div>
+					<div class="fieldset">
+						<label for="email">Text message</label>
+						<textarea id="textarea" name="message" placeholder="Describe your situation. How can we help you?"></textarea>
+					</div>
+					<button type="submit" class="button">Send</button>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="modalsuccess">
+		<div class="info">
+			<button class="close_modalsuccess"></button>
+			<div class="title">Awesome!</div>
+			<img src="theme/img/succeess_ico.svg" alt="">
+			<div class="desc">Your message has been sent successfully</div>
+		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -1,21 +1,15 @@
-// @import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// @import "../../../node_modules/normalize.css/normalize";
 @import "base/mixins";
 @import "base/typography";
 @import "base/variables";
 @import "base/common";
 @import "base/skeleton";
 
-@import "layout/page_parts/social";
-@import "layout/page_parts/animation";
-
 @import "layout/header";
 @import "layout/footer";
+@import "layout/modal";
 
 @import "page/front-page/hero";
 @import "page/front-page/offer";
 @import "page/front-page/banner";
 @import "page/front-page/our-work";
 @import "page/front-page/meeting";
-
-//@import 'https://unpkg.com/swiper/swiper-bundle.min.css';

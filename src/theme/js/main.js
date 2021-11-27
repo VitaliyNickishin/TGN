@@ -10,6 +10,49 @@ $(function() {
   addActive();
   showImg();
   
+  // Modal
+  let modalBtn = $('.openmodal'),
+      modalBox = $('.modalbox'),
+      modalSuccess = $('.modalsuccess'),
+      body = $('body')
+
+  modalBtn.on('click', function() {
+    if($(this).hasClass('active')) {
+      modalBox.removeClass('open')
+      body.removeClass('no-scroll');
+      setTimeout(function() {
+        modalBox.removeClass('active')
+      }, 350)
+      
+    } else {
+      modalBox.addClass('active')
+      body.addClass('no-scroll');
+      setTimeout(function() {
+        modalBox.addClass('open')
+      }, 350)
+    }
+    modalBtn.toggleClass('active')
+    
+  })
+  //click body hide modal
+  modalBox.on('click', function(e) {
+    if(!$(e.target).closest('.modal-contact-us-wrap').length) {
+      
+      modalBox.removeClass('open')
+      body.removeClass('no-scroll');
+      setTimeout(function() {
+        modalBox.removeClass('active');
+      }, 350)
+      modalBtn.toggleClass('active');
+    }
+  })
+
+  modalSuccess.on('click', function(e) {
+    if($(e.target).hasClass('close_modalsuccess') || !$(e.target).closest('.info').length) {
+      modalSuccess.removeClass('open')
+    }
+  })
+  
   
 });
 

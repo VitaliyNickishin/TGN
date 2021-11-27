@@ -236,6 +236,9 @@
     &::placeholder {
       color: $placeholder_color;
     }
+    &:focus {
+      border-color: $third_color;
+    }
   }
   /* Removes awkward default styles on some inputs for iOS */
   input[type="email"],
