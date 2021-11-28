@@ -1,6 +1,6 @@
 .meeting {
   padding-top: 80px;
-  @include mq(tablet, max) {
+  @include mq(sm-comp, max) {
     display: none;
   }
   h2 {
@@ -20,34 +20,174 @@
     }
 
   }
-  .location {
+  
+}
+
+.location {
+  position: absolute;
+  padding: 20px;
+  &:hover {
+    .info-popup {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .city {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     p {
       font-size: 24px;
       line-height: 170%;
-    }
-  }
-  .path {
-    &-wrap {
-      transform-origin: 50% 50%;
-      transition: all 0.25s ease-out;
-      &:hover .path-bg {
-        // transform: scale(1.1);
-        background: url('../img/location.svg') no-repeat center;
-        background-size: contain;
+      font-family: $number_font;
+      svg {
+        width: 24px;
+        height: 24px;
         
       }
     }
-    &-bg {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #5AACF8;
+  }
+  &-venezuela {
+    left: 255px;
+    bottom: 215px;
+    @include mq(desktop-wide, max) {
+      left: 159px;
+      bottom: 133px;
     }
-    &-city * {
-      font-size: 24px;
-      line-height: 170%;
-      color: $primary_color;
-      font-family: $number_font;
+    .info-popup {
+      top: 0;
+      left: 150px;
+    }
+  }
+  &-spain {
+    left: 43%;
+    bottom: 51%;
+    @include mq(desktop-wide, max) {
+      left: 42%;
+      bottom: 47%;
+    }
+    .info-popup {
+      top: 0;
+      left: 90px;
+    }
+  }
+  &-germany {
+    left: 53.5%;
+    bottom: 66%;
+    @include mq(desktop-wide, max) {
+      left: 50.5%;
+      bottom: 62%;
+    }
+    
+    .info-popup {
+      top: 0;
+      left: 130px;
+    }
+  }
+  &-belarus {
+    left: 59%;
+    bottom: 73%;
+    @include mq(desktop-wide, max) {
+      left: 57%;
+      bottom: 72%;
+    }
+    .city {
+      flex-direction: column-reverse;
+    }
+    
+    .info-popup {
+      top: 0;
+      left: 130px;
+      @include mq("1650", max) {
+        left: 110px;
+      }
+    }
+  }
+  &-russia {
+    left: 69%;
+    bottom: 66%;
+    @include mq(desktop-wide, max) {
+      left: 67%;
+      bottom: 62%;
+    }
+    
+    .info-popup {
+      top: 90px;
+      left: -200px;
+      
+    }
+  }
+  &-japan {
+    left: 81%;
+    bottom: 50%;
+    @include mq(desktop-wide, max) {
+      left: 79%;
+      bottom: 45%;
+    }
+    
+    .info-popup {
+      top: 90px;
+      left: -200px;
+      
     }
   }
 }
+
+.info-popup {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 445px;
+  height: auto;
+  background: #16202F url('../img/bg-pop.png') no-repeat right bottom;
+  background-size: 170px 90px;
+  border: 1px solid rgba(64, 111, 233, 0.2);
+  border-radius: 2px;
+  transition: all 0.2s ease-out;
+  color: $primary_color;
+  z-index: 5;
+  @include mq("1650", max) {
+    width: 345px;
+  }
+  
+  &-inner {
+    padding: 43px 35px 33px;
+    @include mq("1650", max) {
+      padding: 33px 25px 23px;
+    }
+  }
+  &-header {
+    @include space-between;
+    p {
+      font-size: 20px;
+      line-height: 135%;
+      
+    }
+  }
+  .icon-wrap {
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 11px;
+      line-height: 100%;
+      color: #8A9AB5;
+    }
+  }
+  .map-icon {
+    margin-left: 10px;
+    width: 28px;
+    transition: all 0.2s ease-out;
+    &:hover {
+      transform: scale(1.1)
+    }
+  }
+  &-contacts {
+    margin-top: 20px;
+    font-family: $helvetca_reg_font;
+    font-size: 13px;
+    line-height: 22px;
+  }
+  
+}
+
