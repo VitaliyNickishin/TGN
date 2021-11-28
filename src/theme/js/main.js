@@ -166,27 +166,20 @@ let closeAccordion = () => {
     // }
   });
 
-  
-
-    // $('[data-action="accordion"] .tab').on('click', function() {
-    //   $(this).addClass('active')
-    //   $('[data-action="accordion"] .tab').removeClass('active');
-    //   $(this).addClass('active');
-    //   checkClass()
-    // });
-    
 }
-// $( "#chbBlogsLabelsList input" ).on( "click", function() {
-//             if($(this).is(":checked")) { $(this).addClass("qqqq");}
-//    else {$(this).removeClass("qqqq");}
-// })
+
 let addActive = () => {
-  $(".accordion input").on('click', function(e) {
-    if ($(this).is(":checked")) {
-      $(this).parent().addClass('active');
-    } else {
-      $(this).parent().removeClass('active');
-    }
+  // let numOfClicks = 0;
+    $('[data-action="accordion"]').on('click', '.tab', function() {
+    $(this).addClass('active').siblings().removeClass('active');
+    // ++numOfClicks;
+    // if(numOfClicks % 2 !== 0) {
+    //   $(this).addClass('active');
+    //   console.log('Odd Click!');
+    // } else {
+    //   $(this).removeClass('active');
+    //   console.log('Even Click!');
+    // } 
   });
 }
 
@@ -207,18 +200,58 @@ let initParallax = () => {
   });
 }
 
+//change img for akkordion
 let showImg = () => {
-  $('input[type="checkbox"]').on('click', () => {
-    console.log('clisk');
-    let value = $(this).val();
-    console.log(value);
-    if(value === 'paid'){
-        $(this).closest('.offer').find('[data-img="paid"]').show();
-        $(this).closest('.offer').find('[data-img="pr"]').hide();
+  $('.accordion input[type="checkbox"]').on('click', (e) => {
+    let valueInput = $(e.target).val();
+    if(valueInput === 'solutions'){
+        $(e.target).closest('.offer').find('[data-img="solutions"]').show();
+        $(e.target).closest('.offer').find('[data-img="paid"]').hide();
+        $(e.target).closest('.offer').find('[data-img="software"]').hide();
+        $(e.target).closest('.offer').find('[data-img="collaboration"]').hide();
+        $(e.target).closest('.offer').find('[data-img="video"]').hide();
+        $(e.target).closest('.offer').find('[data-img="paper"]').hide();
     }
-    // else{
-    //     $('#one').hide();
-    //     $('#two').show();
-    // }
+    if(valueInput === 'paid'){
+        $(e.target).closest('.offer').find('[data-img="paid"]').show();
+        $(e.target).closest('.offer').find('[data-img="solutions"]').hide();
+        $(e.target).closest('.offer').find('[data-img="software"]').hide();
+        $(e.target).closest('.offer').find('[data-img="collaboration"]').hide();
+        $(e.target).closest('.offer').find('[data-img="video"]').hide();
+        $(e.target).closest('.offer').find('[data-img="paper"]').hide();
+    }
+    if(valueInput === 'software'){
+        $(e.target).closest('.offer').find('[data-img="software"]').show();
+        $(e.target).closest('.offer').find('[data-img="paid"]').hide();
+        $(e.target).closest('.offer').find('[data-img="solutions"]').hide();
+        $(e.target).closest('.offer').find('[data-img="collaboration"]').hide();
+        $(e.target).closest('.offer').find('[data-img="video"]').hide();
+        $(e.target).closest('.offer').find('[data-img="paper"]').hide();
+    }
+    if(valueInput === 'collaboration'){
+        $(e.target).closest('.offer').find('[data-img="collaboration"]').show();
+        $(e.target).closest('.offer').find('[data-img="paid"]').hide();
+        $(e.target).closest('.offer').find('[data-img="solutions"]').hide();
+        $(e.target).closest('.offer').find('[data-img="software"]').hide();
+        $(e.target).closest('.offer').find('[data-img="video"]').hide();
+        $(e.target).closest('.offer').find('[data-img="paper"]').hide();
+    }
+    if(valueInput === 'video'){
+        $(e.target).closest('.offer').find('[data-img="video"]').show();
+        $(e.target).closest('.offer').find('[data-img="paid"]').hide();
+        $(e.target).closest('.offer').find('[data-img="solutions"]').hide();
+        $(e.target).closest('.offer').find('[data-img="collaboration"]').hide();
+        $(e.target).closest('.offer').find('[data-img="software"]').hide();
+        $(e.target).closest('.offer').find('[data-img="paper"]').hide();
+    }
+    if(valueInput === 'paper'){
+        $(e.target).closest('.offer').find('[data-img="paper"]').show();
+        $(e.target).closest('.offer').find('[data-img="paid"]').hide();
+        $(e.target).closest('.offer').find('[data-img="solutions"]').hide();
+        $(e.target).closest('.offer').find('[data-img="collaboration"]').hide();
+        $(e.target).closest('.offer').find('[data-img="video"]').hide();
+        $(e.target).closest('.offer').find('[data-img="software"]').hide();
+    }
+    
   })
 }
