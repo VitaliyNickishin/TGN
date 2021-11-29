@@ -105,6 +105,7 @@
     .button {
       margin-left: 34px;
       font-size: 14px;
+      height: 54px;
       @include mq (desktop-wide) {
         margin-left: 64px;
       }

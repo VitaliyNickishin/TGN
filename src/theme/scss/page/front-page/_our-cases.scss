@@ -1,0 +1,144 @@
+.our-cases {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  @include mq(tablet-small, max) {
+    padding-top: 60px;
+  }
+  h2 {
+    @include mq(tablet-wide, max) {
+      line-height: 30px;
+    }
+  }
+}
+
+.case-box {
+  display: flex;
+  align-items: center;
+  &-img {
+    display: flex;
+    justify-content: center;
+  }
+  &-content {
+    @include mq(tablet-wide, max) {
+      margin-top: 70px;
+    }
+    h4 {
+      margin-bottom: 46px;
+      font-family: $helvetca_bold_font;
+      @include mq(desktop-wide, max) {
+        margin-bottom: 16px;
+      }
+    }
+    p {
+      color: #A7A4B6;
+      opacity: 0.75;
+      padding-bottom: 20px;
+      font-family: $roboto_reg_font;
+      @include mq(desktop-wide, max) {
+        font-size: 16px;
+      }
+      @include mq(tablet, max) {
+        line-height: 130%;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  &-btn {
+    margin-top: 50px;
+    @include mq(desktop-wide, max) {
+      margin-top: 30px;
+    }
+  }
+  .button {
+    width: 362px;
+    max-width: 100%;
+  }
+  &-slider {
+    .slick-slide {
+      img {
+        @include mq(tablet-wide, max) {
+          border-radius: 10px;
+        }
+      }
+    } 
+    .slick-dots {
+      bottom: -60px;
+      @include mq(tablet-wide, max) {
+        bottom: 400px;
+      }
+      @include mq("991", max) {
+        bottom: 455px;
+      }
+      @include mq(tablet, max) {
+        bottom: 405px;
+      }
+      @include mq(tablet-small, max) {
+        bottom: 425px;
+      }
+      @include mq("580", max) {
+        bottom: 455px;
+      }
+      @include mq("520", max) {
+        bottom: 485px;
+      }
+      @include mq(phone-wide, max) {
+        bottom: 530px;
+      }
+      @include mq("410", max) {
+        bottom: 580px;
+      }
+      @include mq(phone, max) {
+        bottom: 600px;
+      }
+      @include mq("350", max) {
+        bottom: 640px;
+      }
+      @include mq("345", max) {
+        bottom: 680px;
+      }
+      
+      @include flex-center;
+      li {
+        width: 12px;
+        height: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        button {
+          &::before {
+            color: transparent;
+            
+          }
+        }
+        &.slick-active {
+          margin: 0;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid rgba(61, 104, 230, 0.1);
+          button {
+            margin: 2px;
+            width: 18px;
+            height: 18px;
+            padding: 0;
+            border: 1px solid rgba(61, 104, 230, 0.3);
+            border-radius: 50%;
+            opacity: 1;
+            &::before {
+              margin: 5px;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              opacity: 1;
+              color: transparent;
+              background: linear-gradient(261.04deg, #5AACF8 -5.62%, #395FE4 106.69%);
+            }
+            
+          }
+        }
+      }
+    }
+    
+  }
+}

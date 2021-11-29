@@ -14,6 +14,10 @@
   font-family: 'Roboto-Bold';
   src: url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'HelveticaNeueCyr-Medium';
@@ -48,5 +52,16 @@
     url('../fonts/helvetica/HelveticaNeueCyr-Roman.woff') format('woff'),
     url('../fonts/helvetica/HelveticaNeueCyr-Roman.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url('../fonts/helvetica/HelveticaNeueCyr-Bold.eot');
+  src: local('../fonts/helvetica/HelveticaNeueCyr-Bold'),
+    url('../fonts/helvetica/HelveticaNeueCyr-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/helvetica/HelveticaNeueCyr-Bold.woff') format('woff'),
+    url('../fonts/helvetica/HelveticaNeueCyr-Bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }

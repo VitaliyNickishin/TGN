@@ -9,6 +9,7 @@ $(function() {
   initParallax();
   addActive();
   showImg();
+  initCaseBoxSlider();
   
   // Modal
   let modalBtn = $('.openmodal'),
@@ -255,3 +256,33 @@ let showImg = () => {
     
   })
 }
+
+//sleder blockchain
+let initCaseBoxSlider = function () {
+  jQuery('.case-box-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 500,
+    arrows: false,
+    dots: true,
+    fade: true,
+    cssEase: 'linear',
+    // responsive: [
+    //   {
+    //     breakpoint: 991,
+    //     settings: {
+    //       slidesToShow: 1,
+            
+    //     }
+    // },
+    // {
+    //     breakpoint: 550,
+    //     settings: {
+    //       arrows: false,
+    //       slidesToShow: 1,
+    //     }
+    //   }
+    // ]
+  });
+};

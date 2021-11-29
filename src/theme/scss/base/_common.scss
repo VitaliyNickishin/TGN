@@ -72,7 +72,8 @@ b,
 //main btn
 .button {
   @include flex-center;
-  height: 54px;
+  // padding: 18px 48px;
+  height: 59px;
   width: 216px;
   font-size: 18px;
   font-family: $medium_font;
@@ -83,7 +84,12 @@ b,
   text-decoration: none;
   cursor: pointer;
   transition: all .2s ease-out;
-
+  @include mq(tablet-wide, max) {
+    padding: 13px 16px;
+  }
+  @include mq(m, max) {
+    padding: 13px 10px;
+  }
   &:hover {
     color: $secondary_color;
     // background: linear-gradient(0deg, #ccc, #ccc);
