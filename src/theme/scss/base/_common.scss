@@ -65,7 +65,10 @@ b,
   }
   span {
     // font-family: $normal_font;
-    color: $third_color;
+    // color: $third_color;
+    background: $title-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
