@@ -2,7 +2,6 @@ $(function() {
 
   headerFixed();
   mobileBurger();
-  initSliderRoadmap();
   initAos();
   initCoinParallax();
   closeAccordion();
@@ -90,39 +89,7 @@ let mobileBurger = () => {
     $('body').removeClass('overflow')
   })
 }
-/* sleder Roadmap */
-let initSliderRoadmap = () => {
-  const roadmapSlider = $('.roadmap-slider');
-  roadmapSlider.slick({
-    variableWidth: true,
-    slidesToScroll: 4,
-    slidesToScroll: 1,
-    initialSlide: 1,
-    arrows: false,
-    speed: 300,
-    centerMode: true,
-    infinite: false,
-    responsive: [
-      {
-          breakpoint: 1024,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-          }
-      },
-      
-      ]
-    });
-    
-  //   roadmapSlider.on('wheel', function(e) {
-  //     e.preventDefault();
-  //     if (e.originalEvent.deltaX > 0) {
-  //         $(this).slick('slickNext');
-  //     } else {
-  //         $(this).slick('slickPrev');
-  //     }
-  // });
-};
+
 
 
 /* use parallax for coin in roadmap section */ 
@@ -267,22 +234,21 @@ let initCaseBoxSlider = function () {
     arrows: false,
     dots: true,
     fade: true,
-    cssEase: 'linear',
-    // responsive: [
-    //   {
-    //     breakpoint: 991,
-    //     settings: {
-    //       slidesToShow: 1,
-            
-    //     }
-    // },
-    // {
-    //     breakpoint: 550,
-    //     settings: {
-    //       arrows: false,
-    //       slidesToShow: 1,
-    //     }
-    //   }
-    // ]
+    cssEase: 'linear'
   });
 };
+
+//list-logo-slider mobile
+$(window).on('load resize', function() {
+    if ($(window).width() < 991) {
+        $('.list-logo-slider:not(.slick-initialized)').slick({
+            variableWidth: true,
+            rows: 2,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false
+        });
+    } else {
+        $(".list-logo-slider.slick-initialized").slick("unslick");
+    }
+});
