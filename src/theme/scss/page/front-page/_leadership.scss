@@ -1,0 +1,71 @@
+.leadership {
+  padding: 80px 0;
+  @include mq(tablet-wide, max) {
+    padding: 50px 0 0;
+  }
+  h2 {
+    margin-bottom: 40px;
+    @include mq(tablet-wide, max) {
+      margin-bottom: 20px;
+    }
+  }
+  &-list {
+    margin-left: -12px;
+    margin-right: -12px;
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+    @include mq(tablet-wide, max) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.card {
+  margin: 12px 6px;
+  padding: 40px 30px;
+  width: 344px;
+  // height: 490px;
+  background: linear-gradient(0deg, rgba(18, 33, 70, 0.5) 0%, rgba(78, 78, 78, 0) 100%);
+  border: 1px solid #172754;
+  backdrop-filter: blur(150px);
+  border-radius: 8px;
+  text-align: center;
+  @include mq(desktop-wide, max) {
+    padding: 24px 16px;
+  }
+  &-photo {
+    margin: 0 auto 25px;
+    width: 184px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  &-title {
+    .h4 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      line-height: 29px;
+      
+    }
+    .position {
+      margin-bottom: 35px;
+      font-size: 16px;
+      line-height: 16px;
+      @include mq(desktop-wide, max) {
+        margin-bottom: 24px;
+      }
+    }
+    
+  }
+  &-descriprtion {
+    margin-top: 35px;
+  }
+}
+
+.text-mute {
+  font-family: $helvetca_reg_font;
+  font-size: 16px;
+  line-height: 120%;
+  color: $grey;
+}
