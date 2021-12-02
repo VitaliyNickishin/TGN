@@ -9,8 +9,8 @@
 
 .banner {
   padding: 60px 40px 40px;
-  background: linear-gradient(0deg, rgba(18, 33, 70, 0.5) 0%, rgba(78, 78, 78, 0) 101.39%);
-  border: 1px solid #172754;
+  background: $second-bg-gradient;
+  border: 1px solid $border-color;
   backdrop-filter: blur(150px);
   border-radius: 8px;
   @include mq(tablet-wide, max) {
@@ -58,6 +58,12 @@
       @include mq(tablet-wide, max) {
         background: none;
       }
+    }
+    .pr-0 {
+      @include mq(tablet-wide) {
+        padding-right: 0;
+      }
+
     }
     
   }

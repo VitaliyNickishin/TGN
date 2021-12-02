@@ -4,11 +4,14 @@ $white: #ffffff;
 $secondary_color: #353535;
 $third_color: #57A4F5;//
 $lemon_color: #FFDF6D;
+$lawny_color: #AAF191;//
 $main-bg: #0A111A;//
 $main-bg-gradient: linear-gradient(261.04deg, #5AACF8 -5.62%, #395FE4 106.69%);//
+$second-bg-gradient: linear-gradient(0deg, rgba(18, 33, 70, 0.5) 0%, rgba(78, 78, 78, 0) 101.39%);//
 $title-gradient: -webkit-linear-gradient(181deg, #5aacf8 0%, #395fe4 80%);//
 $placeholder_color: rgba(255, 255, 255, 0.5);//
 $grey: #A7A4B6;//
+$border-color: #172754; //
 
 
 
@@ -33,7 +36,7 @@ $light_font: 'Gilroy-Light', sans-serif; //300
 // $normal_font: 'Yorkten-Slab-Regular', sans-serif; //400
 $regular_font: 'HelveticaNeueCyr-Medium', sans-serif; //500
 $helvetca_reg_font: 'Helvetica Neue Cyr', sans-serif; //400
-$helvetca_bold_font: 'Helvetica Neue Bold', sans-serif; //400
+$helvetca_bold_font: 'Helvetica Neue Bold', sans-serif; //700
 $light_font: 'Helvetica Neue Cyr Thin', sans-serif; //300
 $medium_font: 'Druk-Wide-Medium', sans-serif; //600
 $number_font: 'Roboto-Bold', sans-serif; //700

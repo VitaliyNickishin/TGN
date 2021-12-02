@@ -63,13 +63,11 @@ b,
       text-align: center;
     }
   }
-  span {
-    // font-family: $normal_font;
-    // color: $third_color;
-    background: $title-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+}
+.text-gradient {
+  background: $title-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 //main btn
@@ -198,4 +196,8 @@ a {
   position:fixed;
   width: 100%;
   height: 100%;
+}
+
+.d-block {
+  display: block;
 }

@@ -25,9 +25,8 @@
   margin: 12px 6px;
   padding: 40px 30px;
   width: 344px;
-  // height: 490px;
   background: linear-gradient(0deg, rgba(18, 33, 70, 0.5) 0%, rgba(78, 78, 78, 0) 100%);
-  border: 1px solid #172754;
+  border: 1px solid $border-color;
   backdrop-filter: blur(150px);
   border-radius: 8px;
   text-align: center;
