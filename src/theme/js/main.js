@@ -258,7 +258,7 @@ let initTestiomonialsSlider = function () {
  			settings: {
  				slidesToShow: 1,
  				slidesToScroll: 1,
-        arrows: false,
+        // arrows: false,
  			}
  		}, 
   ]
@@ -275,25 +275,25 @@ let initTestiomonialsSlider = function () {
  		focusOnSelect: true,
  		infinite: false,
     variableWidth: true,
- 		responsive: [{
- 			breakpoint: 1024,
- 			settings: {
- 				slidesToShow: 5,
- 				slidesToScroll: 5,
- 			}
- 		}, {
- 			breakpoint: 640,
- 			settings: {
- 				slidesToShow: 4,
- 				slidesToScroll: 4,
-			}
- 		}, {
- 			breakpoint: 420,
- 			settings: {
- 				slidesToShow: 3,
- 				slidesToScroll: 3,
-		}
- 		}]
+ 		// responsive: [{
+ 		// 	breakpoint: 1024,
+ 		// 	settings: {
+ 		// 		slidesToShow: 5,
+ 		// 		slidesToScroll: 5,
+ 		// 	}
+ 		// }, {
+ 		// 	breakpoint: 640,
+ 		// 	settings: {
+ 		// 		slidesToShow: 4,
+ 		// 		slidesToScroll: 4,
+		// 	}
+ 		// }, {
+ 		// 	breakpoint: 420,
+ 		// 	settings: {
+ 		// 		slidesToShow: 3,
+ 		// 		slidesToScroll: 3,
+		// }
+ 		// }]
  	});
 
  $('.testimonials-lists-slider').on('afterChange', function(event, slick, currentSlide) {

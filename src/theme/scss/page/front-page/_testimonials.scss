@@ -46,17 +46,39 @@
     padding: 50px 0 55px 40px;
     background: $second-bg-gradient;
     border: 1px solid $border-color;
-    box-sizing: border-box;
     backdrop-filter: blur(150px);
     border-radius: 8px;
+    @include mq("991", max) {
+      padding: 0;
+      background: none;
+      border: 0;
+      backdrop-filter: none;
+    }
     
   }
   &-avatars {
     margin: 0 auto 80px;
     width: 480px;
+    @include mq("991", max) {
+      margin-bottom: 30px;
+      
+    }
+    @include mq(tablet-small, max) {
+      width: 290px;
+    }
+    @include mq(m, max) {
+      width: 230px;
+    }
     .testimonials-card {
       padding: 0 15px;
       width: 80px;
+      @include mq(tablet-small, max) {
+        padding: 0 6px;
+        width: 48px;
+      }
+      @include mq(m, max) {
+        width: 38px;
+      }
       .avatar:not(.is-active) {
         width: 100%;
         padding: 0;
@@ -76,6 +98,13 @@
         padding: 7px;
         border-radius: 50%;
         width: 68px;
+        @include mq(tablet-small, max) {
+          padding: 5px;
+          width: 50px;
+        }
+        @include mq(m, max) {
+          width: 40px;
+        }
       }
     }
     .slick-track {
@@ -84,11 +113,27 @@
     }
   }
 
+  &-lists-slider {
+    @include mq("991", max) {
+      background: $second-bg-gradient;
+      border: 1px solid $border-color;
+      backdrop-filter: blur(150px);
+      border-radius: 8px;
+    }
+  }
+
   &-card {
     padding: 0 60px;
     width: 760px;
     @include mq("991", max) {
-      width: 320px;
+      width: 560px;
+      padding: 16px;
+    }
+    @include mq(tablet-small, max) {
+      width: 340px;
+    }
+    @include mq(m, max) {
+      width: 280px;
     }
     
     &-header {
@@ -99,6 +144,11 @@
       margin-bottom: 16px;
       font-size: 26px;
       line-height: 34px;
+      @include mq("991", max) {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 21px;
+      }
     }
     .avatar {
       width: 83px;
@@ -125,22 +175,46 @@
       font-size: 24px;
       line-height: 150%;
       font-family: $helvetca_reg_font;
+      @include mq("991", max) {
+        margin-top: 24px;
+        font-size: 18px;
+      }
     }
     .logo-box {
       margin-top: 28px;
+      @include mq("991", max) {
+        margin-top: 24px;
+      }
     }
 
   }
   .slick-slide{
-    // background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     opacity: 0.3;
     &.slick-current {
-      // background: none;
       opacity: 1;
     }
     &.is-active .avatar {
       border-color: $third_color;
       opacity: 1;
+    }
+  }
+  .arrow {
+    @include mq("991", max) {
+      top: -21%;
+    }
+    @include mq(tablet-small, max) {
+      width: 11px;
+      height: 18px;
+      top: -14%;
+    }
+    @include mq(m, max) {
+      top: -13%;
+    }
+  }
+  .next {
+    right: 40px;
+    @include mq("991", max) {
+      right: 0;
     }
   }
 }
@@ -149,26 +223,21 @@
   position: absolute;
   top: 50%;
   z-index: 99;
-  // border: solid $white;
-  // border-width: 0 3px 3px 0;
-  // display: inline-block;
-  // padding: 3px;
   width: 18px;
   height: 37px;
   border: none;
   background: transparent;
+  
 }
 
 .prev {
   background: url('../img/prew.svg') no-repeat center;
   background-size: contain;
-  // transform: rotate(135deg);
   left: 0px;
 }
 
 .next {
   background: url('../img/next.svg') no-repeat center;
   background-size: contain;
-  // transform: rotate(-45deg);
-  right: 40px;
+  right: 0;
 }
