@@ -241,42 +241,40 @@ let initCaseBoxSlider = function () {
 
 //sleder testimonials
 let initTestiomonialsSlider = function () {
-  // $('.testimonials-avatars-slider').slick({
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   arrows: false,
-  //   fade: true,
-  //   asNavFor: '.testimonials-lists-slider'
-  // });
-  // $('.testimonials-lists-slider').slick({
-  //   slidesToShow: 2,
-  //   slidesToScroll: 1,
-  //   asNavFor: '.testimonials-avatars-slider',
-  //   dots: false,
-  //   focusOnSelect: true
-  // });
+  //main
   $('.testimonials-lists-slider').slick({
  	slidesToShow: 2,
  	slidesToScroll: 1,
  	arrows: true,
- 	fade: false,
- 	adaptiveHeight: true,
+  prevArrow: '<button type="button" class="prev arrow"></button>',
+  nextArrow: '<button type="button" class="next arrow"></button>',
  	infinite: true,
 	useTransform: true,
+  variableWidth: true,
  	speed: 400,
  	cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
+   responsive: [{
+ 			breakpoint: 991,
+ 			settings: {
+ 				slidesToShow: 1,
+ 				slidesToScroll: 1,
+        arrows: false,
+ 			}
+ 		}, 
+  ]
  });
-
+ //avatar
  $('.testimonials-avatars-slider')
  	.on('init', function(event, slick) {
  		$('.testimonials-avatars-slider .slick-slide.slick-current').addClass('is-active');
  	})
  	.slick({
- 		slidesToShow: 7,
- 		slidesToScroll: 7,
+ 		slidesToShow: 6,
+ 		slidesToScroll: 1,
  		dots: false,
- 		focusOnSelect: false,
+ 		focusOnSelect: true,
  		infinite: false,
+    variableWidth: true,
  		responsive: [{
  			breakpoint: 1024,
  			settings: {
@@ -303,6 +301,10 @@ let initTestiomonialsSlider = function () {
  	var currrentNavSlideElem = '.testimonials-avatars-slider .slick-slide[data-slick-index="' + currentSlide + '"]';
  	$('.testimonials-avatars-slider .slick-slide.is-active').removeClass('is-active');
  	$(currrentNavSlideElem).addClass('is-active');
+ });
+
+ $('.testimonials-avatars-slider').on('afterChange', function() {
+ 	$('.testimonials-avatars-slider .slick-slide').removeClass('slick-current');
  });
 
  $('.testimonials-avatars-slider').on('click', '.slick-slide', function(event) {
