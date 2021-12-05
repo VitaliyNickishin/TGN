@@ -3,9 +3,7 @@ $(function() {
   headerFixed();
   mobileBurger();
   initAos();
-  initCoinParallax();
   closeAccordion();
-  initParallax();
   addActive();
   showImg();
   initCaseBoxSlider();
@@ -92,19 +90,6 @@ let mobileBurger = () => {
 }
 
 
-
-/* use parallax for coin in roadmap section */ 
-let initCoinParallax = () => {
-  const image = document.getElementsByClassName('coin-parallax');
-  new simpleParallax(image, {
-    delay: 5,
-    transition: 'cubic-bezier(0,0,0,1)',
-    maxTransition: 60,
-    overflow: true,
-    scale: 1.5
-  });
-}
-
 let closeAccordion = () => {
   //var 1
 //   $("input:checkbox").on('click', function() {
@@ -168,6 +153,11 @@ let initParallax = () => {
     });
   });
 }
+$(window).on('load resize', function() {
+    if ($(window).width() > 991) {
+      initParallax();
+    } 
+});
 
 //change img for akkordion
 let showImg = () => {
@@ -275,25 +265,7 @@ let initTestiomonialsSlider = function () {
  		focusOnSelect: true,
  		infinite: false,
     variableWidth: true,
- 		// responsive: [{
- 		// 	breakpoint: 1024,
- 		// 	settings: {
- 		// 		slidesToShow: 5,
- 		// 		slidesToScroll: 5,
- 		// 	}
- 		// }, {
- 		// 	breakpoint: 640,
- 		// 	settings: {
- 		// 		slidesToShow: 4,
- 		// 		slidesToScroll: 4,
-		// 	}
- 		// }, {
- 		// 	breakpoint: 420,
- 		// 	settings: {
- 		// 		slidesToShow: 3,
- 		// 		slidesToScroll: 3,
-		// }
- 		// }]
+ 		
  	});
 
  $('.testimonials-lists-slider').on('afterChange', function(event, slick, currentSlide) {
@@ -314,8 +286,6 @@ let initTestiomonialsSlider = function () {
  	$('.testimonials-lists-slider').slick('slickGoTo', goToSingleSlide);
  });
 };
-
-
 
 //list-logo-slider mobile
 $(window).on('load resize', function() {
