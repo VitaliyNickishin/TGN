@@ -91,49 +91,17 @@ let mobileBurger = () => {
 
 
 let closeAccordion = () => {
-  //var 1
-//   $("input:checkbox").on('click', function() {
-//   // in the handler, 'this' refers to the box clicked on
-//   var $box = $(this);
-//   if ($box.is(":checked")) {
-//     // the name of the box is retrieved using the .attr() method
-//     // as it is assumed and expected to be immutable
-//     var group = "input:checkbox[name='" + $box.attr("name") + "']";
-//     // the checked state of the group/box on the other hand will change
-//     // and the current value is retrieved using .prop() method
-//     $(group).prop("checked", false);
-//     $box.prop("checked", true);
-//   } else {
-//     $box.prop("checked", false);
-//   }
-// });
-
-//var 2
   $('input[type="checkbox"]').on('change', function() {
     let box = $(this);
     $('input[type="checkbox"]').not(box).prop('checked', false);
-    // if (box.is(":checked")) {
-    //   let tab = $('[data-action="accordion"] .tab');
-    //   $(tab).addClass('active');
-    // } else {
-    //   $(tab).removeClass('active');
-    // }
   });
 
 }
-
+//add active for akkordion
 let addActive = () => {
-  // let numOfClicks = 0;
-    $('[data-action="accordion"]').on('click', '.tab', function() {
-    $(this).addClass('active').siblings().removeClass('active');
-    // ++numOfClicks;
-    // if(numOfClicks % 2 !== 0) {
-    //   $(this).addClass('active');
-    //   console.log('Odd Click!');
-    // } else {
-    //   $(this).removeClass('active');
-    //   console.log('Even Click!');
-    // } 
+    $('[data-action="accordion"] .tab label').on('click', function() {
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().toggleClass('active');
   });
 }
 
@@ -289,15 +257,15 @@ let initTestiomonialsSlider = function () {
 
 //list-logo-slider mobile
 $(window).on('load resize', function() {
-    if ($(window).width() < 991) {
-        $('.list-logo-slider:not(.slick-initialized)').slick({
-            variableWidth: true,
-            rows: 2,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: false
-        });
-    } else {
-        $(".list-logo-slider.slick-initialized").slick("unslick");
-    }
+  if ($(window).width() < 991) {
+    $('.list-logo-slider:not(.slick-initialized)').slick({
+      variableWidth: true,
+      rows: 2,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false
+    });
+  } else {
+    $(".list-logo-slider.slick-initialized").slick("unslick");
+  }
 });
