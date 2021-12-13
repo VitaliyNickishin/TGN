@@ -1,9 +1,6 @@
 .our-work {
   padding-top: 100px;
   padding-bottom: 65px;
-  @include mq(tablet-wide, max) {
-    padding-top: 45px;
-  }
   h2 {
     margin-bottom: 84px;
     @include mq(tablet, max) {
@@ -71,9 +68,9 @@
         left: 75px;
         top: 90px;
       }
-      @include mq(m, max) {
-        top: 80px;
-      }
+      // @include mq(m, max) {
+      //   top: 80px;
+      // }
     }
   }
   &-three {

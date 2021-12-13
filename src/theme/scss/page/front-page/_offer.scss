@@ -2,7 +2,7 @@
 	padding-top: 150px;
 	padding-bottom: 150px;
 	@include mq(tablet-wide, max) {
-		padding-top: 35px;
+		padding-top: 70px;
 		padding-bottom: 45px;
 	}
 	h2 {
@@ -76,6 +76,10 @@
 			padding-left: 16px;
 			padding-right: 16px;
 			padding-top: 0;
+			margin-bottom: 15px;
+		}
+		.offer__img-mob {
+			display: none;
 		}
 		&.active {
 			background: linear-gradient(0deg, rgba(18, 33, 70, .5) 0, rgba(101, 126, 186, 0) 144.25%);
@@ -83,6 +87,12 @@
 			backdrop-filter: blur(4px);
 			border-radius: 16px;
 			padding-bottom: 24px;
+
+			.offer__img-mob {
+				@include mq(tablet-wide, max) {
+					display: block;
+				}
+			}
 			
 		}
 
@@ -98,10 +108,6 @@
 
 			&[type=checkbox]:checked+label::after {
 				transform: rotate(225deg);
-				top: 10px;
-				@include mq("991", max) {
-					top: 0;
-				}
 			}
 		}
 
@@ -114,16 +120,13 @@
 				content: '';
 				position: absolute;
 				transform: rotate(45deg);
-				top: 10px;
+				top: 5px;
 				right: 0;
 				border: solid $white;
 				border-width: 0 6px 6px 0;
 				padding: 5px;
 				transition: all 0.2s ease-out;
 				transform-origin: center;
-				@include mq("991", max) {
-					top: 0;
-				}
 			}
 		}
 
@@ -142,7 +145,6 @@
 		&-content {
 			max-height: 0;
 			overflow: hidden;
-			transition: all .3s ease-out;
 			p {
 				padding-bottom: 24px;
 				color: #A7A4B6;

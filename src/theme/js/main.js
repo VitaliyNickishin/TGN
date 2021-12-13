@@ -8,6 +8,7 @@ $(function() {
   showImg();
   initCaseBoxSlider();
   initTestiomonialsSlider();
+  smoothAnchorTransition();
   
   // Modal
   let modalBtn = $('.openmodal'),
@@ -269,3 +270,12 @@ $(window).on('load resize', function() {
     $(".list-logo-slider.slick-initialized").slick("unslick");
   }
 });
+
+let smoothAnchorTransition = () => {
+  $('[data-nav]').on('click', 'a', function (event) {
+    event.preventDefault();
+    const id  = $(this).attr('href'),
+        top = $(id).offset().top-100;
+    $('body,html').animate({scrollTop: top}, 300);
+  });
+}

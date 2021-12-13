@@ -3,7 +3,7 @@
   padding-bottom: 100px;
   @include mq(tablet, max) {
     padding-top: 46px;
-    padding-bottom: 52px;
+    padding-bottom: 0;
   }
 }
 

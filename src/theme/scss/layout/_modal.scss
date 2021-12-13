@@ -246,10 +246,13 @@
     position: relative;
     max-width: 488px;
     width: 100%;
-    padding: 32px 0;
+    padding: 40px 20px;
     border-radius: 16px;
-    // background: url(../img/success_bg.jpg) 50% 50% no-repeat;
-    background-size: cover;
+    background: rgba(18, 16, 26, 0.9);
+    @include mq(phablet, max) {
+      width: 90%;
+    }
+    
 
     .close_modalsuccess {
       position: absolute;
