@@ -140,10 +140,10 @@
 		.tab-title {
 			position: relative;
 			padding-right: 40px;
-			font-family: $medium_font;
+			font-family: $montserrat_font;
 			font-size: $large-font-size;
 			line-height: 29px;
-			letter-spacing: 0.05em;
+			// letter-spacing: 0.05em;
 			@include mq(tablet, max) {
 				font-size: $medium-font-size;
 				line-height: 23px;
