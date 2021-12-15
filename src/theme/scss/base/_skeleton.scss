@@ -148,7 +148,7 @@
     line-height: 3.6rem;
     font-family: $medium_font;
     color: $primary_color;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
 
     @include mq(desktop-wide, max) {
       font-size: 2rem;
@@ -203,6 +203,7 @@
     line-height: 2.125rem;
     font-family: $medium_font;
     color: $primary_color;
+    letter-spacing: 0.05em;
     
   }
 
