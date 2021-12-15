@@ -77,7 +77,7 @@
       height: 300px;
       z-index: 3;
       @include mq("991", max) {
-        background: none;
+        display: none;
       }
     }
   }
@@ -116,9 +116,7 @@
     }
   }
   .btn-row {
-    @include mq(tablet-small) {
-      margin-top: 20px;
-    }
+    margin-top: 20px;
     .button {
       @include mq(tablet-small, max) {
         width: 100%;
