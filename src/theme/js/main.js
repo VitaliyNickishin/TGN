@@ -9,6 +9,19 @@ $(function() {
   initCaseBoxSlider();
   initTestiomonialsSlider();
   smoothAnchorTransition();
+  validationForm();
+  sendForm();
+
+  var utm_keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    utm_keys.forEach(utm_key => {
+      var utm_value = getCookie('utm-' + utm_key);
+      if (utm_value !== undefined && utm_value !== '' && utm_value !== null) {
+          let selector = "input[name='" + utm_key + "']";
+          if ($(selector).length) {
+              $(selector).val(utm_value);
+          }
+      }
+    });
   
   // Modal
   let modalBtn = $('.openmodal'),
@@ -81,12 +94,12 @@ let mobileBurger = () => {
   menuBtn.on('click', function() {
     menuBtn.toggleClass('active')
     menuBox.toggleClass('active')
-    $('body').toggleClass('overflow')
+    $('body').toggleClass('no-scroll')
   })
   menuLink.on('click', function() {
     menuBtn.removeClass('active')
     menuBox.removeClass('active')
-    $('body').removeClass('overflow')
+    $('body').removeClass('no-scroll')
   })
 }
 
@@ -272,10 +285,90 @@ $(window).on('load resize', function() {
 });
 
 let smoothAnchorTransition = () => {
-  $('[data-nav]').on('click', 'a', function (event) {
-    event.preventDefault();
+  $('[data-nav]').on('click', 'a', function () {
     const id  = $(this).attr('href'),
         top = $(id).offset().top-100;
     $('body,html').animate({scrollTop: top}, 300);
   });
+}
+
+//get cookie
+var getCookie = function (cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+};
+
+let validationForm = () =>  {
+  $('[name="name"], [name="phone"]').on('input blur', function(){
+    let attr = $(this).attr('name');
+    let val = $(this).val();
+    let btn = $(this).closest('form').find('[data-action="submit"]');
+    switch(attr) {
+      
+      case 'name':
+        var rv_name = /^[a-zA-Zа-яА-Я]+$/; 
+
+        if(val.length > 0 && val != '' && rv_name.test(val)) {
+          $(this).removeClass('error');
+        } else {
+          $(this).addClass('error');
+        }
+      break;
+
+      case 'phone':
+          // var rv_tg = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])/;
+          if(val != '' ) {
+            $(this).removeClass('error');
+          } else {
+            $(this).addClass('error');
+          }
+      break;
+    } 
+    if($('.error').length == 0) {
+      btn.removeClass('disabled');
+    } else {
+      btn.addClass('disabled');
+    }
+
+  });
+}
+
+let sendForm = () => {
+  $('body').on('click', '[data-action="submit"]', function (event) {
+        // validation process
+        let btn = $(this);
+        let form = $(this).closest('form');
+        let name = $(form).find('[name="name"]');
+        let nameValue = $(form).find('[name="name"]').val();
+        let tel = $(form).find('[name="phone"]');
+        let telValue = $(form).find('[name="phone"]').val();
+
+        if (nameValue.length < 1 && telValue.length < 1) {
+          name.addClass('error');
+          tel.addClass('error');
+          form.addClass('error-validation');
+          btn.addClass('disabled');
+        } else {
+          name.removeClass('error');
+          tel.removeClass('error');
+          form.removeClass('error-validation');
+          btn.removeClass('disabled');
+        }
+        
+
+        if (form.hasClass('error-validation')) {
+            event.preventDefault();
+            return false;
+        }
+    });
 }

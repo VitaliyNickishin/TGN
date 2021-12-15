@@ -36,7 +36,7 @@ $send = send_form();
 // 		$mail_to_user->setFrom('info@digitalwsiagency.com');
 // 		$mail_to_user->FromName = 'TGN';
 // 		$mail_to_user->addAddress('maximus.perepel96@gmail.com');
-// 		$mail_to_user->addAddress('test-tklpp5itz@srv1.mail-tester.com');
+// 		$mail_to_user->addAddress('test-unez0oewh@srv1.mail-tester.com');
 // 		$mail_to_user->Subject = 'Contact request from TGN';
 // 		$mail_to_user->Body    = $email_message;
 // 		$mail_to_user->send();
@@ -630,9 +630,11 @@ $send = send_form();
 									<div class="first-row form-row">
 										<div class="input-wrap">
 											<input name="name" type="text" required placeholder="How can we call you?">
+											<span data-error class="error-info">This field is required</span>
 										</div>
 										<div class="input-wrap">
 											<input name="phone" type="tel" required placeholder="WhatsApp / Telegram">
+											<span data-error class="error-info">This field is required</span>
 										</div>
 										<div class="input-wrap">
 											<input name="email" type="email" placeholder="E-mail">
@@ -642,7 +644,7 @@ $send = send_form();
 										<textarea name="message" cols="40" rows="10" class="textarea" placeholder="Describe your situation. How can we help you?"></textarea>
 									</div>
 									<div class="btn-row form-row">
-										<button class="button" type="submit">Apply now</button>
+										<button data-action="submit" class="button" type="submit">Apply now</button>
 									</div>
 								</form>
 							</div>
@@ -660,7 +662,7 @@ $send = send_form();
 		</footer>
 	</div>
 
-	<div class="modalbox">
+	<div class="modal modalbox">
 		<div class="modal-contact-us-wrap">
 			<div class="modal-contact-us">
 				<button class="burger close openmodal" type="button" area-label="modal"><span></span></button>
@@ -678,23 +680,24 @@ $send = send_form();
 					<div class="fieldset flex">
 						<div class="item">
 							<label for="name">How can we call you?</label>
-							<input type="text" name="name" value="" id="name" required placeholder="Enter your Name and Surname">
+							<input type="text" name="name" value="" required placeholder="Enter your Name and Surname">
+							<span data-error class="error-info">This field is required</span>
 						</div>
 						<div class="item">
 							<label for="tg">WhatsApp / Telegram</label>
-							<input type="text" name="phone" value="" id="tg" required placeholder="@">
+							<input type="tel" name="phone" value="" required placeholder="@">
+							<span data-error class="error-info">This field is required</span>
 						</div>
 					</div>
 					<div class="fieldset">
 						<label for="email">E-mail</label>
 						<input type="text" name="email" type="email" value="" id="email" placeholder="Enter your E-mail">
-						<!-- <div class="error">Please, enter correct E-mail</div> -->
 					</div>
 					<div class="fieldset">
 						<label for="email">Text message</label>
 						<textarea id="textarea" name="message" placeholder="Describe your situation. How can we help you?"></textarea>
 					</div>
-					<button type="submit" class="button">Send</button>
+					<button data-action="submit" type="submit" class="button">Send</button>
 				</form>
 			</div>
 
@@ -702,7 +705,7 @@ $send = send_form();
 
 	</div>
 
-	<div class="modalsuccess <?php if (!empty($send['status']) && $send['status'] == 'success_send_form') : ?>modalbox active open<?php endif; ?>">
+	<div class="modal modalsuccess <?php if (!empty($send['status']) && $send['status'] == 'success_send_form') : ?>open<?php endif; ?>">
 		<div class="info">
 			<button class="close_modalsuccess"></button>
 			<div class="title">Awesome!</div>

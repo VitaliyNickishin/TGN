@@ -23,9 +23,16 @@
 		margin-bottom: 25px;
 		margin-left: -16px;
 		margin-right: -16px;
+		&.offer-img {
+			img {
+				border-radius: 16px 16px 0 0;
+			}
+
+		}
 	}
 	&-img {
 		img {
+			border-radius: 16px;
 			animation-name: Appearance;
 			animation-duration: .5s;
 			animation-timing-function: cubic-bezier(.1, -.6, .2, 0);

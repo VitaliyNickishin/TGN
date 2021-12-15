@@ -92,7 +92,7 @@
 					<div class="row">
 						<div class="column one-half">
 							<div class="offer__img-desk offer-img">
-									<img data-img="solutions" src="theme/img/offer-img/slide-1.png" alt="PR solutions">
+									<img data-img="solutions" src="theme/img/offer-img/slide-11.png" alt="PR solutions">
 									<img class="hide" data-img="paid" src="theme/img/offer-img/slide-2.png" alt="Paid traffic">
 									<img class="hide" data-img="software" src="theme/img/offer-img/slide-3.png" alt="Software">
 									<img class="hide" data-img="collaboration" src="theme/img/offer-img/slide-4.png" alt="Collaboration">
@@ -107,7 +107,7 @@
 
 									<div class="tab active">
 										<div class="offer__img-mob offer-img">
-											<img data-img="solutions" src="theme/img/offer-img/slide-1.png" alt="PR solutions">
+											<img data-img="solutions" src="theme/img/offer-img/slide-11.png" alt="PR solutions">
 										</div>
 										<input id="tab-1" type="checkbox" name="fooby[1][]" value="solutions" checked>
 										<label for="tab-1">
@@ -1050,10 +1050,12 @@
 								<form class="footer-form" action="submit.php" method="post">
 									<div class="first-row form-row">
 										<div class="input-wrap">
-											<input name="name" type="text" placeholder="How can we call you?">
+											<input name="name" type="text" placeholder="How can we call you?" required>
+											<span data-error class="error-info">This field is required</span>
 										</div>
 										<div class="input-wrap">
-											<input name="phone" type="tel" placeholder="WhatsApp / Telegram">
+											<input name="phone" type="tel" placeholder="WhatsApp / Telegram" required>
+											<span data-error class="error-info">This field is required</span>
 										</div>
 										<div class="input-wrap">
 											<input name="email" type="email" placeholder="E-mail">
@@ -1063,7 +1065,7 @@
 										<textarea name="message" cols="40" rows="10" class="textarea" placeholder="Describe your situation. How can we help you?"></textarea>
 									</div>
 									<div class="btn-row form-row">
-										<button class="button" type="submit">Apply now</a>
+										<button class="button" type="submit" data-action="submit">Apply now</a>
 									</div>
 								</form>
 							</div>	
@@ -1081,7 +1083,7 @@
 		</footer>
 	</div>
 
-	<div class="modalbox">
+	<div class="modal modalbox">
 		<div class="modal-contact-us-wrap">
 			<div class="modal-contact-us">
 				<button class="burger close openmodal" type="button" area-label="modal"><span></span></button>
@@ -1089,27 +1091,28 @@
 					<p class="h3">Contact us</p>
 					<p class="undertitle">Let us help you build and grow your company</p>
 				</div>
-				<form action="">
+				<form action="/" method="post">
 					<div class="fieldset flex">
 						<div class="item">
 							<label for="name">How can we call you?</label>
-							<input type="text" name="" value="" id="name" placeholder="Enter your Name and Surname">
+							<input type="text" name="name" value="" placeholder="Enter your Name and Surname" required>
+							<span data-error class="error-info">This field is required</span>
 						</div>
 						<div class="item">
 							<label for="tg">WhatsApp / Telegram</label>
-							<input type="text" name="text" value="" id="tg" placeholder="@">
+							<input type="tel" name="phone" value="" placeholder="@" required>
+							<span data-error class="error-info">This field is required</span>
 						</div>
 					</div>
 					<div class="fieldset">
 						<label for="email">E-mail</label>
 						<input type="text" name="email" type="email" value="" id="email" placeholder="Enter your E-mail">
-						<!-- <div class="error">Please, enter correct E-mail</div> -->
 					</div>
 					<div class="fieldset">
 						<label for="email">Text message</label>
 						<textarea id="textarea" name="message" placeholder="Describe your situation. How can we help you?"></textarea>
 					</div>
-					<button type="submit" class="button">Send</button>
+					<button data-action="submit" type="submit" class="button">Send</button>
 				</form>
 			</div>
 
@@ -1117,7 +1120,7 @@
 
 	</div>
 
-	<div class="modalsuccess">
+	<div class="modal modalsuccess">
 		<div class="info">
 			<button class="close_modalsuccess"></button>
 			<div class="title">Awesome!</div>

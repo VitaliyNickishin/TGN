@@ -10,81 +10,49 @@ function send_form()
         if (!empty($_POST['name']) && !empty($_POST['phone'])) {
             $name = $_POST['name'];
             $tel = $_POST['phone'];
-            $email_message = "Name: $name \n\n";
-            $email_message .= "Whatsapp/telegram: $tel \n\n";
-            if (!empty($_POST['email'])) {
-                $email_message .= "Email: " . $_POST['email'] . "\n\n";
-            }
-            if (!empty($_POST['message'])) {
-                $email_message .= "Message: " . $_POST['message'] . " \n\n";
-            }
-            if (!empty($_POST['utm_source'])) {
-                $email_message .= "<p>utm_source: " . $_POST['utm_source'] . " </p>";
-            }
-            if (!empty($_POST['utm_medium'])) {
-                $email_message .= "<p>utm_medium: " . $_POST['utm_medium'] . " </p>";
-            }
-            if (!empty($_POST['utm_campaign'])) {
-                $email_message .= "<p>utm_campaign: " . $_POST['utm_campaign'] . " </p>";
-            }
-            if (!empty($_POST['utm_content'])) {
-                $email_message .= "<p>utm_content: " . $_POST['utm_content'] . " </p>";
-            }
-            if (!empty($_POST['utm_term'])) {
-                $email_message .= "<p>utm_term: " . $_POST['utm_term'] . " </p>";
-            }
-
-            $to = 'pivnev.vlad@gmail.com,si@icoda.io';
-            // $to = 'maximus.perepel96@gmail.com,gena.test.dev@gmail.com';
-
-            $subject = 'Contact request from digitalwsiagency.com';
-            $headers = 'From: info@digitalwsiagency.com'       . "\r\n" .
-                'Reply-To: info@digitalwsiagency.com' . "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-
-            $sended_message = mail($to, $subject, $email_message, $headers);
 
             try {
-                require_once __DIR__ . '/PHPMailer/PHPMailerAutoload.php';
-
-                $email_message = "<p>Name: $name </p>";
-                $email_message .= "<p>Whatsapp/telegram: $tel </p>";
+                $email_message = "Name: $name" . "\n\n";
+                $email_message .= "Whatsapp/telegram: $tel" . "\n\n";
                 if (!empty($_POST['email'])) {
-                    $email_message .= "<p>Email: " . $_POST['email'] . "</p>";
+                    $email_message .= "Email: " . $_POST['email'] . "\n\n";
                 }
                 if (!empty($_POST['message'])) {
-                    $email_message .= "<p>Message: " . $_POST['message'] . " </p>";
+                    $email_message .= "Message: " . $_POST['message'] . "\n\n";
                 }
 
                 if (!empty($_POST['utm_source'])) {
-                    $email_message .= "<p>utm_source: " . $_POST['utm_source'] . " </p>";
+                    $email_message .= "utm_source: " . $_POST['utm_source'] . "\n\n";
                 }
                 if (!empty($_POST['utm_medium'])) {
-                    $email_message .= "<p>utm_medium: " . $_POST['utm_medium'] . " </p>";
+                    $email_message .= "utm_medium: " . $_POST['utm_medium'] . "\n\n";
                 }
                 if (!empty($_POST['utm_campaign'])) {
-                    $email_message .= "<p>utm_campaign: " . $_POST['utm_campaign'] . " </p>";
+                    $email_message .= "utm_campaign: " . $_POST['utm_campaign'] . "\n\n";
                 }
                 if (!empty($_POST['utm_content'])) {
-                    $email_message .= "<p>utm_content: " . $_POST['utm_content'] . " </p>";
+                    $email_message .= "utm_content: " . $_POST['utm_content'] . "\n\n";
                 }
                 if (!empty($_POST['utm_term'])) {
-                    $email_message .= "<p>utm_term: " . $_POST['utm_term'] . " </p>";
+                    $email_message .= "utm_term: " . $_POST['utm_term'] . "\n\n";
                 }
 
-                $mailer = new PHPMailer(true);
-                $mailer->DKIM_private = '/root/digitalwsiagency.com.private';
-                $mailer->DKIM_selector = 'mail';
-                $mailer->CharSet = 'utf-8';
-                $mailer->isHTML(true);
-                $mailer->setFrom('info@digitalwsiagency.com');
-                $mailer->FromName = 'TGN';
-                $mailer->addAddress('maximus.perepel96@gmail.com');
-                // $mailer->addAddress('pivnev.vlad@gmail.com');
-                // $mailer->addAddress('si@icoda.io');
-                $mailer->Subject = 'Contact request from TGN';
-                $mailer->Body    = $email_message;
-                $mailer->send();
+                $data = array(
+                    'chat_id' => -1001617788597,
+                    'text' => strip_tags($email_message),
+                    'parse_mode' => 'html'
+                );
+                $url = 'https://api.telegram.org/bot1656470988:AAG5P9zEze3Lcv0dYSfkiVJWCU1ZAGD2-tc/sendMessage';
+
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, count($data));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+                $response = curl_exec($ch);
+                curl_close($ch);
+
                 $sended_message = true;
             } catch (Exception $e) {
                 $sended_message = false;

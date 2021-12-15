@@ -96,6 +96,10 @@ b,
     // background: linear-gradient(0deg, #ccc, #ccc);
     background: darken($color: $white, $amount: 10%)
   }
+  &.disabled {
+    background: rgba(229, 235, 215, 0.5);
+    pointer-events: none;
+  }
 }
 
 
@@ -195,3 +199,4 @@ a {
 .d-block {
   display: block;
 }
+
