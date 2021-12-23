@@ -120,7 +120,7 @@ let addActive = () => {
 }
 
 let initParallax = () => {
-  let scene = $('#banner-parallax');
+  let scene = $('#experts-parallax');
   $(window).on('mousemove', (event) => {
     scene.find('.layer').each(function() {
       let transform = "translate(-" + event.pageX * parseFloat($(this).attr('data-speedX')) * 0.2 +

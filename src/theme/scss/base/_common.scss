@@ -68,6 +68,8 @@ b,
   background: $title-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  //for safari
+  -webkit-box-decoration-break: clone;
 }
 
 //main btn

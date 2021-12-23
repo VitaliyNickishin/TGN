@@ -1,4 +1,4 @@
-.seciton-banner {
+.seciton-experts {
   padding-top: 150px;
   padding-bottom: 100px;
   @include mq(tablet, max) {
@@ -7,7 +7,7 @@
   }
 }
 
-.banner {
+.experts {
   padding: 60px 40px 40px;
   background: $second-bg-gradient;
   border: 1px solid $border-color;
@@ -43,7 +43,7 @@
     //man desktop
     &::before {
       content: '';
-      background: url('../img/banner/banner-img.png') no-repeat right;
+      background: url('../img/experts/experts-img.png') no-repeat right;
       background-size: contain;
       position: absolute;
       right: 100px;

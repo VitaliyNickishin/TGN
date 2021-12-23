@@ -39,7 +39,7 @@
     position: relative;
     p {
       position: absolute;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 140%;
       @include mq(tablet, max) {
         font-size: 1.125rem;//18px

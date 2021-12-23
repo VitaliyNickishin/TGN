@@ -18,6 +18,23 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link href="./theme/css/main.min.css" rel="stylesheet">
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(86913894, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true,
+			webvisor:true
+	});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/86913894" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
 </head>
 <?php
 include_once './functions.php';
@@ -249,41 +266,41 @@ $send = send_form();
 
 			</section>
 
-			<section class="seciton-banner" data-aos="fade-up">
+			<section class="seciton-experts" data-aos="fade-up">
 				<div class="container">
-					<div class="banner">
-						<div class="banner-inner">
+					<div class="experts">
+						<div class="experts-inner">
 							<div class="row">
 								<div class="column one-half">
-									<div class="title-wrap banner__title">
+									<div class="title-wrap experts__title">
 										<h3>Get an analysis for your project from our
 											<span class="text-gradient">top marketing and IT experts!</span>
 										</h3>
 									</div>
-									<div class="banner__btn">
+									<div class="experts__btn">
 										<button type="button" class="button openmodal">Apply now</a>
 									</div>
 
 								</div>
 								<div class="column one-half">
-									<div id="banner-parallax" class="banner__img">
+									<div id="experts-parallax" class="experts__img">
 										<div class="layer bulb" data-speedX='0.1' data-speedY="0.1">
-											<img src="./theme/img/banner/bulb-6.png" alt="bulb">
+											<img src="./theme/img/experts/bulb-6.png" alt="bulb">
 										</div>
 										<div class="layer note" data-speedX='0.2' data-speedY="0.15">
-											<img src="./theme/img/banner/note-5.png" alt="note">
+											<img src="./theme/img/experts/note-5.png" alt="note">
 										</div>
 										<div class="layer business" data-speedX='0.15' data-speedY="0.1">
-											<img src="./theme/img/banner/business-4.png" alt="business">
+											<img src="./theme/img/experts/business-4.png" alt="business">
 										</div>
 										<div class="layer pin" data-speedX='0.3' data-speedY="0.2">
-											<img src="./theme/img/banner/pin-2.png" alt="pin">
+											<img src="./theme/img/experts/pin-2.png" alt="pin">
 										</div>
 										<div class="layer list" data-speedX='0.25' data-speedY="0.1">
-											<img src="./theme/img/banner/list-3.png" alt="list">
+											<img src="./theme/img/experts/list-3.png" alt="list">
 										</div>
 										<div class="person">
-											<img src="./theme/img/banner/banner-img.png" alt="banner-img">
+											<img src="./theme/img/experts/experts-img.png" alt="experts-img">
 										</div>
 
 									</div>
