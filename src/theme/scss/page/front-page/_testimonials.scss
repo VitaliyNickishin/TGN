@@ -141,11 +141,9 @@
       align-items: center; 
     }
     .h4 {
-      margin-bottom: 16px;
       font-size: 26px;
       line-height: 34px;
       @include mq("991", max) {
-        margin-bottom: 10px;
         font-size: 16px;
         line-height: 21px;
       }
@@ -163,16 +161,20 @@
     .title {
       margin-left: 20px;
     }
-    .profile-link {
-      color: $lawny_color;
-      text-decoration: revert;
-      font-size: 13px;
-      line-height: 13px;
-      font-family: $helvetca_reg_font;
-    }
+    // .profile-link {
+    //   margin-top: 16px;
+    //   color: $lawny_color;
+    //   text-decoration: revert;
+    //   font-size: 13px;
+    //   line-height: 13px;
+    //   font-family: $helvetca_reg_font;
+    //   @include mq("991", max) {
+    //     margin-top: 10px;
+    //   }
+    // }
     &-body {
       margin-top: 40px;
-      font-size: 24px;
+      font-size: 18px;
       line-height: 150%;
       font-family: $helvetca_reg_font;
       @include mq("991", max) {

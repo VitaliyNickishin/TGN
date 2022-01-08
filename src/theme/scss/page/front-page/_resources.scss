@@ -5,6 +5,11 @@
     padding-top: 60px;
     padding-bottom: 20px;
   }
+  .text-gradient {
+    @include mq("991") {
+      display: block;
+    }
+  }
   
 }
 
